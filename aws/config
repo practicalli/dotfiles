@@ -1,0 +1,25 @@
+## Amazon Web Services Configuration
+##
+## With and without Okta single sign-on
+
+
+## Without Single sign-on
+
+## Default settings used with all profiles
+# [default]
+# region = eu-west-2
+
+# [profile staging]
+# role_arn = arn:aws:iam::************:role/Developer
+# mfa_serial = arn:aws:iam::************:mfa/my.email@company-domain.com
+# source_profile = default
+
+
+## With Okta single sign-on
+
+[profile domain-staging]
+sso_start_url = https://<sso-domain>.com/start
+sso_region = eu-west-2
+sso_account_id = <arn:aws:iam value>
+sso_role_name = PowerUserAccess
+region = eu-west-2
