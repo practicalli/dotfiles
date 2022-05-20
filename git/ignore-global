@@ -1,0 +1,85 @@
+# An example global gitignore file
+#
+# If using XDG basedir configiration, save this file to the root of the users git configuration directory
+# e.g. `$XDG_CONFIG_HOME/git/ignore-global`
+# Run `git config --global core.excludesfile ignore-global`
+
+# Otherwise add this file to $HOME/.gitignore-global
+# Run `git config --global core.excludesfile $HOME/.gitignore-global`
+
+# Clojure tooling #
+###################
+**/.calva
+**/.carve
+**/.cpcache/
+**/.clj-kondo/.cache
+**/.clj-kondo/.cache/
+**/.lsp
+**.lsp/.cache/
+**/.clojure-lsp
+.rebel_readline_history
+
+
+# General Editor Tooling #
+##########################
+.idea
+.iml
+*.sublime-workspace
+.vscode
+
+
+# Logs and databases #
+######################
+*.log
+**/sqlite.db
+
+
+# OS generated files #
+######################
+desktop.ini
+*.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+[Tt]humbs.db
+
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.msi
+*.rar
+*.tar
+*.war
+*.xz
+*.zip
+
+
+# Secure files #
+################
+**/*.gpg
+
+
+# Temporary files #
+###################
+*~
+*#
+\#*
+\#
+.\#*
+._*
+auto-save-list
+*.bak
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+*.swo
+*.swp
+tramp

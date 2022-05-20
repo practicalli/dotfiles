@@ -1,0 +1,94 @@
+## Practicalli Git Configuration
+##
+## Adjust paths if not saved in `~/.config/git/`
+
+##########################################
+## Identity
+##########################################
+
+# Add identity to all commits (required for GitHub / GitLab)
+[user]
+	name = John Practicalli
+
+	# Use GitHub no-reply email address to keep real address private
+	email = "******+github-account@users.noreply.github.com"
+
+	# For signed commits and signed annotated tags
+	# https://www.git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work#_signing
+	# signingkey = <gpg-key-id>
+
+## Identity for using GitHub API
+[github]
+	user = github-accountname
+
+	# Use `authinfo.gpg` to store tokens for greater security
+	# oauth-token = ghp_verylongtokenwithlotsofrandomlygeneratedcharacters
+	# host = api.github.com
+
+# [credential]
+#     helper = osxkeychain
+
+
+##########################################
+## Git Behaviour
+##########################################
+
+[core]
+	# Set which editor to use for editing commit messages (when not included with -m)
+	# VISUAL or EDITOR environment variables also set the choice of editor
+	# vi used if not set.  Typical examples are nvim or emacsclient
+	editor = nvim
+
+	# file and directory patterns to ignore across all projects
+	excludesfile = ~/.config/git/ignore-global
+
+	# Tool to page through long output (e.g. git log). `less` is default
+	# pager = less
+
+[commit]
+	# Default commit message - useful if team has a commit message policy
+	template = ~/.config/git/commit-message-template
+
+# [init]
+	# scripts and hooks to add when creating a new local Git repository
+	# templateDir = ~/.config/git/repo-template/
+
+	# defaultBranch = main
+
+[merge]
+	# Include common parent when merge conflicts arise
+	conflictstyle = diff3
+
+[fetch]
+	# Remove deleted remote branches from local repository
+	prune = true
+
+
+##########################################
+## Customise Commands
+##########################################
+
+# command line shot cuts
+[alias]
+	branches = branch -av
+	tags = tag -l
+	lg = log --graph --decorate --relative-date --oneline
+	lp = log --graph --pretty=format:'%C(cyan)%h%Creset - %C(bold yellow)%d%Creset %s %C(blue)(%ar) %C(magenta)%an%Creset' --all
+	sitrep = status -sb
+	sr = status -sb
+	word = diff --word-diff
+	unstage = reset HEAD
+	empty = "git commit --allow-empty"
+
+	# delete locate branches merged into the remote
+	delete-local-merged = "!git fetch && git branch --merged | egrep -v 'master' | xargs git branch -d"
+
+# Clone short-cuts
+[url "git@github.com:practicalli/"]
+	# git clone practicalli:repo-name
+	insteadOf = practicalli:
+
+[help]
+	# Automatically change incorrectly typed commands
+	# Set timeout (in 0.1 second steps) before git automatically changes the command
+	# autocorrect = 50
