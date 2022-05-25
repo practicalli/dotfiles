@@ -17,9 +17,9 @@ git clone https://github.com/practicalli/dotfiles.git $XDG_CONFIG_HOME
 Otherwise clone this repository and copy the configuration directories or specific examples as required.
 
 
-## Tool specific repositories
+## Specific tool repositories
 
-Larger configurations are separated into their own repositories
+Tools with a larger configuration have been separated into their own repositories for convenience.
 
 * [practicalli/spacemacs.d](https://github.com/practicalli/spacemacs.d/) - Clojure & LSP focused configuration for Spacemacs
 * [practicalli/neovim-config](https://github.com/practicalli/neovim-config) - Clojure, Conjure & LSP configuration with Fennel and Lua configuration
