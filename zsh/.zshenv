@@ -27,3 +27,7 @@ if [[ -d $HOME/.apps/nodejs/current ]]; then
 else
   path=($path)
 fi
+
+# Zulip events - command line authentication
+# https://gitlab.com/clojurians-zulip/feeds/-/blob/master/README.md#announce-an-event
+export ZULIP_AUTH='****@************:********************************'
