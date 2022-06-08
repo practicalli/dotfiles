@@ -18,3 +18,12 @@ export SPACEMACSDIR=$XDG_CONFIG_HOME/spacemacs
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+
+## Nodejs local install
+## unsure if an else branch is needed here...
+if [[ -d $HOME/.apps/nodejs/current ]]; then
+  path=($HOME/.apps/nodejs/current/bin(/N) $path)
+else
+  path=($path)
+fi
