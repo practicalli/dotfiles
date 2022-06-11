@@ -78,27 +78,32 @@
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;; Refactor code
+
+ ;; namespaces
  :clean {:automatically-after-ns-refactor true
-         :ns-inner-blocks-indentation :next-line
-         :ns-import-classes-indentation :next-line
-         :sort {:ns true
-                :require true
-                :import true
+         :ns-inner-blocks-indentation     :next-line
+         :ns-import-classes-indentation   :next-line
+         :sort {:ns      false
+                :require false
+                :import  false
                 :import-classes {:classes-per-line 3} ;; -1 for all in single line
                 :refer {:max-line-length 80}}}
- :hover {:hide-file-location? false
-         :arity-on-same-line? false
-         :clojuredocs true}
 
- :code-lens {:segregate-test-references true}
- :semantic-tokens? true
- :use-metadata-for-privacy? false
+ ;; Automatically add ns form to new Clojure/Script files
  :auto-add-ns-to-new-files? true
+
+ ;; use ^private metadata rather than defn-
+ :use-metadata-for-privacy? true
+
+ ;; Keep parens around single argument functions in thread macro
  :keep-parens-when-threading? false
- :document-formatting? true
- :document-range-formatting? true
- :text-document-sync-kind :full
- :cljfmt-config-path ".cljfmt.edn"
+
+ ;; End of Refactor code
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
  :cljfmt {}
  :additional-snippets []
  :api {:exit-on-errors? true}
