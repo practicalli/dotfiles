@@ -36,6 +36,17 @@
  :notify-references-on-file-change true
  :compute-external-file-changes    true
 
+ ;; Approach for linking dependencies
+ :dependency-scheme :zip
+
+ ;; generate and analyze stubs for specific namespaces on the project classpath
+ ;; typically for closed source dependencies, e.g. datomic.api
+ ;; https://clojure-lsp.io/settings/#stub-generation
+ :stubs {:generation {:namespaces   #{}
+                      :output-dir   ".lsp/.cache/stubs"
+                      :java-command "java"}
+         :extra-dirs []}
+
  ;; Java Sources from Ubuntu package openjdk-17-source
  :java
  {:jdk-source-uri       "file:///usr/lib/jvm/openjdk-17/lib/src.zip" ;;
@@ -70,14 +81,9 @@
  :keep-parens-when-threading? false
  :document-formatting? true
  :document-range-formatting? true
- :dependency-scheme :zip
  :text-document-sync-kind :full
  :cljfmt-config-path ".cljfmt.edn"
  :cljfmt {}
- :stubs {:generation {:namespaces #{}
-                      :output-dir ".lsp/.cache/stubs"
-                      :java-command "java"}
-         :extra-dirs []}
  :additional-snippets []
  :api {:exit-on-errors? true}
  :show-docs-arity-on-same-line? false ; deprecated, will be removed soon, use :hover :arity-on-same-line?
