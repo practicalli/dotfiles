@@ -7,9 +7,7 @@
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
 {
-
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;; Project analysis
 
@@ -149,8 +147,29 @@
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;; LSP general configuration options
+
+ ;; Exit clojure-lsp if any errors found, e.g. classpath scan failure
  :api {:exit-on-errors? true}
- :show-docs-arity-on-same-line? false ; deprecated, will be removed soon, use :hover :arity-on-same-line?
- :lens-segregate-test-references true ; deprecated, will be removed soon, use :code-lens :segregate-test-references instead.
+
+ ;; Synchronise whole buffer `:full` or only related changes `:incremental`
+ :text-document-sync-kind :full
+
+ ;; LSP general configuration options
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;; File locations
+
+ ;; project analysis cache to speed clojure-lsp startup
+ ;; relative path to project root or absolute path
  :cache-path ".lsp/.cache"
- :log-path "/tmp/clojure-lsp.*.out"}
+
+ ;; Absolute path
+ :log-path "/tmp/clojure-lsp.*.out"
+
+ ;; End of file locations
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ }
