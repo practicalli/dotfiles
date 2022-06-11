@@ -24,6 +24,10 @@
  ;;                  :classpath-cmd ["clojure" "-M:env/dev:env/test" "-Spath"]}]
  :project-specs  []
 
+ ;; Additional LSP configurations to load from classpath
+ ;; https://clojure-lsp.io/settings/#classpath-config-paths
+ :classpath-config-paths []
+
  ;; Ignore Clojure files within the specified directories
  ;; - i.e ignore build artefacts placed in target or resources directories
  :ignore-classpath-directories     false
@@ -75,7 +79,6 @@
                       :java-command "java"}
          :extra-dirs []}
  :additional-snippets []
- :classpath-config-paths []
  :api {:exit-on-errors? true}
  :show-docs-arity-on-same-line? false ; deprecated, will be removed soon, use :hover :arity-on-same-line?
  :lens-segregate-test-references true ; deprecated, will be removed soon, use :code-lens :segregate-test-references instead.
