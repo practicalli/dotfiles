@@ -57,11 +57,27 @@
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
- ;; Lint / Refactor code
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;; Linter configuration
+
+ :linters
+
+ ;; clj-kondo Linter rules
+ ;; https://github.com/clj-kondo/clj-kondo/blob/master/doc/config.md#enable-optional-linters
+ {:clj-kondo {:level             :on
+              :report-duplicates true
+              :ns-exclude-regex  ""}}
+
+ ;; asynchronously lint project files after startup, for features like List project errors
  :lint-project-files-after-startup? true
- :linters {:clj-kondo {:level :on
-                       :report-duplicates true
-                       :ns-exclude-regex ""}}
+
+ ;; copy clj-kondo hooks configs exported by libs on classpath during startup
+ :copy-kondo-configs? true
+
+ ;; End of Linter configuration
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
  :clean {:automatically-after-ns-refactor true
          :ns-inner-blocks-indentation :next-line
          :ns-import-classes-indentation :next-line
@@ -88,6 +104,5 @@
  :api {:exit-on-errors? true}
  :show-docs-arity-on-same-line? false ; deprecated, will be removed soon, use :hover :arity-on-same-line?
  :lens-segregate-test-references true ; deprecated, will be removed soon, use :code-lens :segregate-test-references instead.
- :copy-kondo-configs? true
  :cache-path ".lsp/.cache"
  :log-path "/tmp/clojure-lsp.*.out"}
