@@ -18,6 +18,11 @@
  :notify-references-on-file-change true
  :compute-external-file-changes    true
 
+ ;; Java Sources from Ubuntu package openjdk-17-source
+ :java
+ {:jdk-source-uri       "file:///usr/lib/jvm/openjdk-17/lib/src.zip" ;;
+  :home-path            nil ;; jdk-source-uri takes precedence
+  :download-jdk-source? false}
 
  ;; Lint / Refactor code
  :lint-project-files-after-startup? true
@@ -35,9 +40,7 @@
  :hover {:hide-file-location? false
          :arity-on-same-line? false
          :clojuredocs true}
- :java {:jdk-source-uri "https://raw.githubusercontent.com/clojure-lsp/jdk-source/main/openjdk-19/reduced/source.zip" ; "file:///usr/lib/jvm/java-17-openjdk/lib/src.zip"
-        :home-path nil ;; jdk-source-uri takes precedence
-        :download-jdk-source? false}
+
  :code-lens {:segregate-test-references true}
  :semantic-tokens? true
  :use-metadata-for-privacy? false
