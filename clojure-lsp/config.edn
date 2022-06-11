@@ -1,0 +1,57 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Clojure LSP user level (global) configuration
+;; https://clojure-lsp.io/settings/
+;;
+;; Complete config.edn example with default settings
+;; https://github.com/clojure-lsp/clojure-lsp/blob/master/docs/all-available-settings.edn
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+{:source-paths #{"src" "test"} ;; auto-resolved for deps.edn, project.clj or bb.edn projects
+ :source-aliases #{:dev :test}
+ :project-specs [] ;; Check the default at clojure-lsp.crawler/default-project-specs
+ :ignore-classpath-directories false
+ :lint-project-files-after-startup? true
+ :notify-references-on-file-change true
+ :compute-external-file-changes true
+ :linters {:clj-kondo {:level :on
+                       :report-duplicates true
+                       :ns-exclude-regex ""}}
+ :clean {:automatically-after-ns-refactor true
+         :ns-inner-blocks-indentation :next-line
+         :ns-import-classes-indentation :next-line
+         :sort {:ns true
+                :require true
+                :import true
+                :import-classes {:classes-per-line 3} ;; -1 for all in single line
+                :refer {:max-line-length 80}}}
+ :hover {:hide-file-location? false
+         :arity-on-same-line? false
+         :clojuredocs true}
+ :java {:jdk-source-uri "https://raw.githubusercontent.com/clojure-lsp/jdk-source/main/openjdk-19/reduced/source.zip" ; "file:///usr/lib/jvm/java-17-openjdk/lib/src.zip"
+        :home-path nil ;; jdk-source-uri takes precedence
+        :download-jdk-source? false}
+ :code-lens {:segregate-test-references true}
+ :semantic-tokens? true
+ :use-metadata-for-privacy? false
+ :auto-add-ns-to-new-files? true
+ :keep-parens-when-threading? false
+ :document-formatting? true
+ :document-range-formatting? true
+ :dependency-scheme :zip
+ :text-document-sync-kind :full
+ :cljfmt-config-path ".cljfmt.edn"
+ :cljfmt {}
+ :stubs {:generation {:namespaces #{}
+                      :output-dir ".lsp/.cache/stubs"
+                      :java-command "java"}
+         :extra-dirs []}
+ :additional-snippets []
+ :classpath-config-paths []
+ :api {:exit-on-errors? true}
+ :show-docs-arity-on-same-line? false ; deprecated, will be removed soon, use :hover :arity-on-same-line?
+ :lens-segregate-test-references true ; deprecated, will be removed soon, use :code-lens :segregate-test-references instead.
+ :copy-kondo-configs? true
+ :cache-path ".lsp/.cache"
+ :log-path "/tmp/clojure-lsp.*.out"}
