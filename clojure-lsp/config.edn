@@ -104,7 +104,20 @@
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;; Clojure formatting configuration - cljfmt
+
+ ;; location of cljfmt configuration for formatting
+ ;; Path relative to project root or an absolute path
+ :cljfmt-config-path "cljfmt.edn"
+
+ ;; Specify cljfmt configuration within Clojure LSP configuration file
  :cljfmt {}
+
+ ;; End of Clojure formatting configuration - cljfmt
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
  :additional-snippets []
  :api {:exit-on-errors? true}
  :show-docs-arity-on-same-line? false ; deprecated, will be removed soon, use :hover :arity-on-same-line?
