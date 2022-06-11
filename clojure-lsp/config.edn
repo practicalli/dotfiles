@@ -118,7 +118,37 @@
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;; LSP snippets
+ ;; https://clojure-lsp.io/features/#snippets
+
+ ;; Locally defined snippets
  :additional-snippets []
+
+ ;; End of LSP snippets
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;; Visual LSP components
+
+ :code-lens {:segregate-test-references true}
+
+ ;; LSP semantic tokens server support for syntax highlighting
+ :semantic-tokens? true
+
+ ;; Documentation artefacts
+ :document-formatting?       true
+ :document-range-formatting? true
+
+ :hover {:hide-file-location? false
+         :arity-on-same-line? false
+         :clojuredocs         true}
+
+ ;; Visual LSP components
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
  :api {:exit-on-errors? true}
  :show-docs-arity-on-same-line? false ; deprecated, will be removed soon, use :hover :arity-on-same-line?
  :lens-segregate-test-references true ; deprecated, will be removed soon, use :code-lens :segregate-test-references instead.
