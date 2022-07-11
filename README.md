@@ -24,5 +24,6 @@ Otherwise clone this repository and copy the configuration directories or specif
 
 Tools with a larger configuration have been separated into their own repositories for convenience.
 
+* [practicalli/clojure-lsp-config](https://github.com/practicalli/clojure-lsp-config) - Clojure LSP and cljfmt configuration
 * [practicalli/spacemacs.d](https://github.com/practicalli/spacemacs.d/) - Clojure & LSP focused configuration for Spacemacs
-* [practicalli/neovim-config](https://github.com/practicalli/neovim-config) - Clojure, Conjure & LSP configuration with Fennel and Lua configuration
+* [practicalli/neovim-config](https://github.com/practicalli/neovim-config-redux) - Clojure, Conjure & LSP configuration with Fennel and Lua configuration
