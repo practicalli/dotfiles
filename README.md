@@ -6,6 +6,7 @@ Configuration files for tools such as Git, Clojure development tools.
 * aws - config with profiles and single sign-on with okta
 * regolith - linux distribution based on Ubuntu and i3 tiling window manager (fonts, icons and theme tweaks)
 * clojure - [cljstyle](https://github.com/greglook/cljstyle) formatting rules
+* [kitty terminal](https://sw.kovidgoyal.net/kitty/) configuration - font, symbol mappings for nerdfonts, light and dark terminal colorschemes
 
 
 ## Install
