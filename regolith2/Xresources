@@ -9,6 +9,7 @@ i3-wm.bar.position:	top
 gnome.wm.theme:	Adwaita-dark
 
 Xcursor.size:	32
+!! Xcursor.theme:	Redglass
 
 !! Workspace Icons
 !! Icons to represent purpose of each workspace:
@@ -23,4 +24,3 @@ i3-wm.workspace.07.name:	7:<span> </span><span font_desc='FontAwesome 14'>7 </sp
 i3-wm.workspace.08.name:	8:<span> </span><span font_desc='FontAwesome 14'>8 </span><span foreground='#F7F7F7'></span><span> </span>
 i3-wm.workspace.09.name:	9:<span> </span><span font_desc='FontAwesome 14'>9 </span><span foreground='#F7F7F7'></span><span> </span>
 i3-wm.workspace.10.name:	10:<span> </span><span font_desc='FontAwesome 14'>10 </span><span foreground='#ee8424'></span><span> </span>
-
