@@ -52,11 +52,12 @@
 	# Default commit message - useful if team has a commit message policy
 	template = ~/.config/git/commit-message-template
 
-# [init]
+[init]
 	# scripts and hooks to add when creating a new local Git repository
 	# templateDir = ~/.config/git/repo-template/
 
-	# defaultBranch = main
+	# default branch name when creating a new local repository
+	defaultBranch = main
 
 [merge]
 	# Include common parent when merge conflicts arise
