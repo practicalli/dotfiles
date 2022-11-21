@@ -36,7 +36,7 @@
 	editor = nvim
 
 	# file and directory patterns to ignore across all projects
-	excludesfile = ~/.config/git/ignore-global
+	excludesfile = ~/.config/git/ignore
 
 	# Tool to page through long output (e.g. git log). `less` is default
 	# pager = less
