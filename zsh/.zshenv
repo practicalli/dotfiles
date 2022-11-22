@@ -19,6 +19,12 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
 fi
 
 
+# Application configuration
+
+# Spacemacs User Configuration - equavalent of .spacemacs.d
+export SPACEMACSDIR=$XDG_CONFIG_HOME/spacemacs
+
+
 ## Nodejs local install
 ## unsure if an else branch is needed here...
 if [[ -d $HOME/.apps/nodejs/current ]]; then
@@ -30,3 +36,21 @@ fi
 # Zulip events - command line authentication
 # https://gitlab.com/clojurians-zulip/feeds/-/blob/master/README.md#announce-an-event
 export ZULIP_AUTH='****@************:********************************'
+
+
+# Development Environment Variables
+
+# Docker MySQL server accounts
+export DOCKER_POSTGRESQL_ROOT_PASSWORD=trustnoone
+export DOCKER_POSTGRESQL_DB_USER=billie
+export DOCKER_POSTGRESQL_DB_PASSWORD=trustnoone
+
+# Configuration for jenv
+# https://www.jenv.be/
+# export PATH="$HOME/.jenv/bin:$PATH"
+# eval "$(jenv init -)"
+
+# MySQL Client binaries from Homebrew
+#  - must be manually added to path as symlinks not created
+#  - due to potential conflict with mysql package
+# export PATH="/usr/local/opt/mysql-client/bin:$PATH"
