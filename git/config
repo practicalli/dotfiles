@@ -2,9 +2,7 @@
 ##
 ## Adjust paths if not saved in `~/.config/git/`
 
-##########################################
-## Identity
-##########################################
+## ------ Identity ------ ##
 
 # Add identity to all commits (required for GitHub / GitLab)
 [user]
@@ -29,9 +27,7 @@
 #     helper = osxkeychain
 
 
-##########################################
-## Git Behaviour
-##########################################
+## ------ Git Behaviour ------ ##
 
 [core]
 	# Set which editor to use for editing commit messages (when not included with -m)
@@ -67,10 +63,17 @@
 	# Remove deleted remote branches from local repository
 	prune = true
 
+[merge]
+	# Include common parent when merge conflicts arise
+	conflictstyle = diff3
 
-##########################################
-## Customise Commands
-##########################################
+[push]
+	# Set local brach to track new remote branch automatically
+	# Requires Git 2.37.0
+	autoSetupRemote = true
+
+
+## ------ Git commands ------ ##
 
 # command line shot cuts
 [alias]
