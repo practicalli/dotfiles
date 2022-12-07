@@ -1,0 +1,30 @@
+---
+version: "3.9"
+
+services:
+  # --- Fraud Service --- #
+  fraud-service:
+    platform: linux/amd64
+    build: ./
+    ports:
+      - 8080:8080
+    depends_on:
+      - "local-database"
+
+  # --- MySQL Relational Database --- #
+  local-database:
+    image: "mysql/mysql-server:5.7"
+    environment:
+      MYSQL_USER: "$DOCKER_WATSON_DB_USER"
+      MYSQL_PASSWORD: "$DOCKER_WATSON_DB_PASSWORD"
+      MYSQL_DATABASE: "watson_antifraud"
+      MYSQL_ROOT_PASSWORD: "$DOCKER_MYSQL_ROOT_PASSWORD"
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    # Persist MySQL database schema in a docker volume
+    volumes:
+      - mysql-data:/var/lib/mysql
+volumes:
+  mysql-data:
