@@ -26,7 +26,10 @@
 .vscode
 
 
-## ------ Logs and databases ------ ## 
+## ------ Lint & Format tools ------ ##
+**/megalinter-reports/
+
+## ------ Logs and databases ------ ##
 *.log
 **/sqlite.db
 **/dump*
