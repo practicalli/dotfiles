@@ -1,0 +1,15 @@
+;; --------------------------------------------------
+;; Kaocha Test Runner Configuration
+;;
+;; Kaocha defaults included via `#kaocha/v1 {}`
+;; https://cljdoc.org/d/lambdaisland/kaocha/1.68.1059/doc/3-configuration
+;; --------------------------------------------------
+
+;; Kaocha defalt configuration
+;; with configuration over-rides
+#kaocha/v1
+{;; Stop test run on first failing test
+ :kaocha/fail-fast? true
+
+ ;; Run tests in consistent alphabetical order
+ :kaocha.plugin.randomize/randomize? false}
