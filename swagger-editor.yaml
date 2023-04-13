@@ -1,0 +1,14 @@
+---
+# --- Docker Compose Configuration --- #
+# - Docker Compose V2
+# - https://docs.docker.com/compose/compose-file/
+#
+# Run Swagger editor locally to work with OpenAPI JSON and YAML configurations
+#
+
+# --- Development tooling --- #
+services:
+  swagger-editor:
+    image: "swaggerapi/swagger-editor:latest"
+    ports:
+      - "8282:8080"
