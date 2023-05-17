@@ -1,0 +1,4 @@
+# git-commit-template example
+Jira issue: [{{ key }}]
+{% if parent__key %}Jira story: [{{ parent__key }}]{% endif %}
+{% if summary %}Jira summary: {{ summary }}{% endif %}
