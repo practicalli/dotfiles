@@ -1,82 +1,44 @@
-# An example global gitignore file
-#
-# If using XDG basedir configiration, save this file to the root of the users git configuration directory
-# e.g. `$XDG_CONFIG_HOME/git/ignore-global`
-# Run `git config --global core.excludesfile ignore-global`
+# ------------------------
+# Clojure Project Git Ignore file patterns
+# 
+# Ignore all files except file and directory patterns starting with !
+# ------------------------
 
-# Otherwise add this file to $HOME/.gitignore-global
-# Run `git config --global core.excludesfile $HOME/.gitignore-global`
+# ------------------------
+# Ignore everthing by default
+*
 
-## ------ Clojure Tooling ------ ## 
-**/.calva
-**/.carve
-**/.cpcache/
-**/.clj-kondo/.cache
-**/.clj-kondo/.cache/
-**/.lsp
-**.lsp/.cache/
-**/.clojure-lsp
-.rebel_readline_history
+# ------------------------
+# Include Clojure project & config
+!CHANGEGLOG.md
+!README.md
+!build.clj
+!deps.edn
+!pom.xml
+!dev/
+!docs/
+!resources/
+!src/
+!test/
 
+# ------------------------
+# Include Clojure tools
+!.cljstyle                # Clojure format
+!.dir-locals.el           # Emacs (Cider Jack-in)
+!compose.yaml             # Docker workflow
+!Dockerfile
+!.dockerignore
+!Makefile                 # Make build automation
+!tests.edn                # Kaocha test runner
 
-## ------ General Editor Tooling ------ ## 
-.idea
-.iml
-*.sublime-workspace
-.vscode
+# ------------------------
+# Include Git & CI workflow
+!.gitattributes
+!.gitignore
+!.github/
 
+# ------------------------
+# Include ClojureScript Figwheel
+!figwheel-main.edn        # Figwheel main config
+!*.cljs.edn               # Build configurations
 
-## ------ Lint & Format tools ------ ##
-**/megalinter-reports/
-
-## ------ Logs and databases ------ ##
-*.log
-**/sqlite.db
-**/dump*
-
-
-## ------ OS generated files ------ ## 
-desktop.ini
-*.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-[Tt]humbs.db
-
-
-## ------ Archives ------ ## 
-# it's better to unpack these files and commit the raw source
-# git has its own built in compression methods
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.msi
-*.rar
-*.tar
-*.war
-*.xz
-*.zip
-
-
-## ------ Secure files ----- ## 
-**/*.gpg
-
-
-## ------ Temporary files ----- ## 
-*~
-*#
-\#*
-\#
-.\#*
-._*
-auto-save-list
-*.bak
-/.emacs.desktop
-/.emacs.desktop.lock
-.elc
-*.swo
-*.swp
-tramp
