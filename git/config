@@ -85,3 +85,8 @@
 	# Automatically change incorrectly typed commands
 	# Set timeout (in 0.1 second steps) before git automatically changes the command
 	# autocorrect = 50
+
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential
