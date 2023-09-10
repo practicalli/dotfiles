@@ -8,15 +8,17 @@
 # Ignore everthing by default
 # *
 
-# ------------------------
-# Include Clojure project & config
+# General project files
 !CHANGEGLOG.md
 !README.md
+!docs/
+
+# ------------------------
+# Include Clojure project & config
 !build.clj
 !deps.edn
 !pom.xml
 !dev/
-!docs/
 !resources/
 !src/
 !test/
