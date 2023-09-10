@@ -44,3 +44,8 @@
 !figwheel-main.edn        # Figwheel main config
 !*.cljs.edn               # Build configurations
 
+# Include MkDocs files
+!docs/
+!includes/
+!overrides/
+!mkdocs.yml
