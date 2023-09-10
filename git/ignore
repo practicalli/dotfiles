@@ -6,7 +6,7 @@
 
 # ------------------------
 # Ignore everthing by default
-*
+# *
 
 # ------------------------
 # Include Clojure project & config
