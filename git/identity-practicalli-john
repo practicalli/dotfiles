@@ -19,5 +19,3 @@
 	# oauth-token = ghp_verylongtokenwithlotsofrandomlygeneratedcharacters
 	# host = api.github.com
 
-# [credential]
-#     helper = osxkeychain
