@@ -1,0 +1,26 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: fraud-detection-api
+  title: Fraud Detection API
+  description: Detect Fraudulent transactions via Data Science Machine Learning Models
+  annotations:
+    github.com/project-slug: practicalli/fraud-detection
+    github.com/team-slug: practicalli/Fraud-Detection
+  tags:
+    - clojure
+  links:
+    - url: https://github.conm/practicalli/fraud-detection
+      title: Practicalli Engineering Team
+      icon: docs
+    - url: https://github.com/practicalli/fraud-detection
+      title: Fraud Detection Service Repository
+      icon: github
+spec:
+  type: openapi
+  lifecycle: development
+  owner: practicalli-engineering
+  system: risk-system
+  definition:
+    $text: https://github.com/practicalli/fraud-detection/tree/main/docs/openapi/fraud-detection.yaml
