@@ -60,6 +60,7 @@ SPELL_LYCHEE_DISABLE_ERRORS: true # Errors are only warnings
 
 # Disable linter features
 DISABLE_LINTERS:
+  - YAML_PRETTIER # draconian format rules
   - SPELL_CSPELL # many clojure references causing false positives
   - YAML_YAMLLINT # vague error mesages, investigation required
   - REPOSITORY_GIT_DIFF # warnings about LF to CRLF
