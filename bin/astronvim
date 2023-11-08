@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Set AstroNvim Configuration for Neovim
+export NVIM_APPNAME=astronvim 
+
+# Run Neovim optionally taking arguments
+nvim "$@"
+
+

@@ -19,7 +19,7 @@
 	# Set which editor to use for editing commit messages (when not included with -m)
 	# VISUAL or EDITOR environment variables also set the choice of editor
 	# vi used if not set.  Typical examples are nvim or emacsclient
-	editor = astro
+	editor = astronvim
 
 	# file and directory patterns to ignore across all projects
 	excludesfile = ~/.config/git/ignore
