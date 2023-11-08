@@ -1,7 +1,7 @@
-## Codeowners
+# Codeowners
 
-## Default owner accounts for the current repository
-## Automatically added as a reviewr to all pull requests (not including drafts)
+# Default owner accounts for the current repository
+# Automatically added as a reviewr to all pull requests (not including drafts)
 
 *  @practicalli-john
 
