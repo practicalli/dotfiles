@@ -1,0 +1,4 @@
+
+[allowlist]
+  # Slack api token from the docs https://api.slack.com/interactivity/slash-commands#app_command_handling 
+  regexes = ["ghp_verylongtokenwithlotsofrandomlygeneratedcharacters"]
