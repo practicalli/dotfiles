@@ -86,7 +86,7 @@
 # Clone short-cuts
 [url "git@github.com:practicalli/"]
 	# git clone practicalli:repo-name
-	insteadOf = practicalli:
+	insteadOf = p:
 
 [help]
 	# Automatically change incorrectly typed commands
