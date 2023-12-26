@@ -1,12 +1,13 @@
 # ------------------------
 # Clojure Project Git Ignore file patterns
 # 
-# Ignore all files except file and directory patterns starting with !
+# `!` proceeding a pattern includes that pattern
 # ------------------------
 
 # ------------------------
 # General project files
 !CHANGEGLOG.md
+!CHANGEGLOG.org
 !README.md
 !docs/
 
