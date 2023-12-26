@@ -6,7 +6,7 @@
 
 # Default identity configuration
 [include]
-		path = ~/.config/git/identity-practicalli-john
+		path = ~/.config/git/identity-practicalli
 
 # Over-ride identify for specific directories
 [includeIf "gitdir:~/projects/company-name"]
