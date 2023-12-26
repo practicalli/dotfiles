@@ -1,0 +1,9 @@
+# Shell aliases shared across all shells (zsh, bash)
+
+# Neovim Aliases for multiple configurations
+alias astro="NVIM_APPNAME=astronvim nvim"
+alias cajus="NVIM_APPNAME=cajus nvim"
+alias neovim-config="NVIM_APPNAME=neovim-config nvim"
+
+# Neovide alias with AstroNvim configuration
+alias neovide="NVIM_APPNAME=astronvim neovide"
