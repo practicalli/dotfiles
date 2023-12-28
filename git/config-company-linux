@@ -1,4 +1,8 @@
-## ------ Identity ------ ##
+# Company Linux Git Configuration
+#
+# Adjust paths if files not saved in `~/.config/git/`
+
+# --- Identity
 # Add details for specific company identity
 # Assumes use of Linux for ~ expansion
 
@@ -17,7 +21,7 @@
 [github]
 	user = practicalli-johnny
 
-## ------ Git Behaviour ------ ##
+# --- Git Behaviour
 
 [init]
 	# scripts and hooks to add when creating a new local Git repository
@@ -55,7 +59,7 @@
 	# Remove deleted remote branches from local repository
 	prune = true
 
-## ------ Security ------ ##
+# --- Security
 
 # Use SSH key passphrase stored in MacOSX Keychain with ssh-add command
 # ssh-add --apple-use-keychain $HOME/.ssh/id_ed25519

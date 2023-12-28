@@ -1,9 +1,9 @@
-# Company specific Git configuration
+# Company MacOSX Git configuration
 #
 # Assumes use of MacOSX and ~ expansion not working for paths
 # Replace /Users/practicalli/ path with your own $HOME location
 
-## -- Identity
+# --- Identity
 # Add identity to all commits
 [user]
 	name = Johnny Stevenson
@@ -19,7 +19,7 @@
 [github]
 	user = practicalli-johnny
 
-## -- Git Behaviour
+# --- Git Behaviour
 
 [init]
 	# scripts and hooks to add when creating a new local Git repository
@@ -57,7 +57,7 @@
 	# Remove deleted remote branches from local repository
 	prune = true
 
-## -- Security
+# --- Security
 
 # Use SSH key passphrase stored in MacOSX Keychain with ssh-add command
 # ssh-add --apple-use-keychain $HOME/.ssh/id_ed25519
@@ -73,7 +73,7 @@
 	allowedSignersFile = /Users/practicalli/.config/git/allowed-signatures-company
 
 
-## -- Diff & Merge
+# --- Diff & Merge
 
 # TODO: test configuration for p4merg tool on MacOSX
 

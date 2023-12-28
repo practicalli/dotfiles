@@ -1,32 +1,34 @@
-## ------ Identity ------ ##
+# Practicalli Git Configuration 
+#
+# for projects maintained by Practicalli
+# all commits & tags are signed
 
-# Add identity to all commits
+# --- Identity
+
 [user]
+  # Add identity to all commits
 	name = Practicalli Engineering
-
-	# Use GitHub no-reply email address to keep real address private
 	email = "engineering@practical.li"
 
-  # SSH Key signing (commits & tags( 
+  # SSH Key for signing
 	signingkey = ~/.ssh/id_ed25519.pub
 
-## Identity for using GitHub API
 [github]
+  # Identity for using GitHub API
 	user = practicalli-johnny
 
+# --- Security
 
-## ------ Security ------ ##
-
-# Use SSH key to sign commits and tags
 [gpg]
+  # Use SSH key to sign commits and tags
 	format = ssh
 
-# Self-define SSH keys that should be considered authentic locally
 [gpg "ssh"]
+  # Self-define SSH keys that should be considered authentic locally
 	allowedSignersFile = ~/.config/git/allowed-signatures
 
 
-## ------ Git Behaviour ------ ##
+# --- Git Behaviour
 
 [init]
 	# scripts and hooks to add when creating a new local Git repository
@@ -60,17 +62,23 @@
   # Automatically sign every tag
 	gpgsign = true
 
-[fetch]
-	# Remove deleted remote branches from local repository
-	prune = true
+
+# --- Diff & Merge
 
 [diff]
+  # Neovim diff tool
   tool = nvimdiff
+
+[difftool "nvimdiff"]
+  prompt = false
+
+
+# [difftool "meld"]
+#   prompt = false
 
 # [difftool "meld"]
 # 				cmd = meld \"$LOCAL\" \"$REMOTE\"
 # 				path =
-
 
 [merge]
 	# Include common parent when merge conflicts arise
@@ -79,13 +87,4 @@
 # [mergetool "meld"]
 # 				cmd = meld \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 # 				trustExitCode = true
-
-
-[log]
-	abbrevCommit = true
-
-[push]
-	# Set local brach to track new remote branch automatically
-	# Requires Git 2.37.0
-	autoSetupRemote = true
 

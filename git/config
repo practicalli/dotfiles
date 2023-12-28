@@ -1,6 +1,6 @@
-## Practicalli Git Configuration
-##
-## Adjust paths if not saved in `~/.config/git/`
+# Practicalli dotfiles Git Configuration
+#
+# Adjust paths if not saved in `~/.config/git/`
 
 # --- Conditional Configuration
 # Uses relative file path to this configuration file
@@ -21,7 +21,7 @@
 		path = config-griffin
 
 
-## -- Common Git Behaviour
+# --- Common Git Behaviour
 
 [init]
 	# scripts and hooks to add when creating a new local Git repository
@@ -37,7 +37,7 @@
 	editor = astronvim
 
 	# file and directory patterns to ignore across all projects
-	# excludesfile = ~/.config/git/ignore
+	excludesfile = ~/.config/git/ignore
 
 	# Tool to page through long output (e.g. git log). `less` is default
 	# pager = less
@@ -49,12 +49,14 @@
 	# Remove deleted remote branches from local repository
 	prune = true
 
-[log]
-	abbrevCommit = true
-
 [push]
 	# Set local brach to track new remote branch automatically, Git 2.37.0 onward
 	autoSetupRemote = true
+
+[log]
+	abbrevCommit = true
+
+# --- Diff & Merge
 
 [diff]
   tool = nvimdiff
@@ -64,7 +66,7 @@
 	conflictstyle = diff3
 
 
-## --- Git commands 
+# --- Git commands 
 
 # command line shot cuts
 [alias]
@@ -92,7 +94,7 @@
 	# autocorrect = 50
 
 
-## -- Git CLI
+# --- Git CLI
 
 [credential "https://github.com"]
 	helper = !/usr/bin/gh auth git-credential
