@@ -2,20 +2,23 @@
 ##
 ## Adjust paths if not saved in `~/.config/git/`
 
-## --- Conditional Configuration
+# --- Conditional Configuration
 # Uses relative file path to this configuration file
+# [include]:gitdir for file paths
+# [include]:onbranch for a particular branch 
+# [include]:hasconfig:remote.*.url for a different remote domain, e.g. github & gitlab
 
 # Default personal identity configuration
 [include]
 		path = config-johnny
 
 # Practicalli community work
-[includeIf "gitdir:~/projects/practicalli/"]
+[includeIf "gitdir:**/practicalli/"]
 		path = config-practicalli
 
-# Commercial work
-[includeIf "gitdir:~/commercial-projects/company/"]
-		path = config-company
+# Commercial work 
+[includeIf "gitdir:**/griffin/"]
+		path = config-griffin
 
 
 ## -- Common Git Behaviour
