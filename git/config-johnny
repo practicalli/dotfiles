@@ -1,0 +1,19 @@
+## -- Identity
+
+# Add identity to all commits
+[user]
+	name = Johnny Practicalli
+
+	# Use GitHub no-reply email address to keep real address private
+	email = "******+practicalli-john@users.noreply.github.com"
+
+## Identity for using GitHub API
+[github]
+	user = practicalli-johnny
+
+
+## -- Git Behaviour
+
+[commit]
+	# Default commit message - useful if team has a commit message policy
+	template = ~/.config/git/commit-message-practicalli

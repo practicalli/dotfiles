@@ -2,45 +2,23 @@
 ##
 ## Adjust paths if not saved in `~/.config/git/`
 
-## ------ Identity ------ ##
+## --- Conditional Configuration
+# Uses relative file path to this configuration file
 
-# Default identity configuration
+# Default personal identity configuration
 [include]
-		path = ~/.config/git/identity-practicalli
+		path = config-johnny
 
-# Over-ride identify for specific directories
-[includeIf "gitdir:~/projects/company-name"]
-		path = ~/.config/git/identity-company-name
+# Practicalli community work
+[includeIf "gitdir:~/projects/practicalli/"]
+		path = config-practicalli
+
+# Commercial work
+[includeIf "gitdir:~/commercial-projects/company/"]
+		path = config-company
 
 
-## ------ Git Behaviour ------ ##
-
-[core]
-	# Set which editor to use for editing commit messages (when not included with -m)
-	# VISUAL or EDITOR environment variables also set the choice of editor
-	# vi used if not set.  Typical examples are nvim or emacsclient
-	editor = astronvim
-
-	# file and directory patterns to ignore across all projects
-	excludesfile = ~/.config/git/ignore
-
-	# Tool to page through long output (e.g. git log). `less` is default
-	# pager = less
-
-	# Ensure Linux & MacOSX line endings in checked out text files
-	autocrlf = input
-
-[commit]
-	# Default commit message - useful if team has a commit message policy
-	template = ~/.config/git/commit-message-template
-
-[fetch]
-	# Remove deleted remote branches from local repository
-	prune = true
-
-[difftool "meld"]
-				cmd = meld \"$LOCAL\" \"$REMOTE\"
-				path =
+## -- Common Git Behaviour
 
 [init]
 	# scripts and hooks to add when creating a new local Git repository
@@ -49,24 +27,41 @@
 	# default branch name when creating a new local repository
 	defaultBranch = main
 
-[mergetool "meld"]
-				cmd = meld \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-				trustExitCode = true
+[core]
+	# Set which editor to use for editing commit messages (when not included with -m)
+	# VISUAL or EDITOR environment variables also set the choice of editor
+	# vi used if not set.  Typical examples are nvim or emacsclient
+	editor = astronvim
 
-[merge]
-	# Include common parent when merge conflicts arise
-	conflictstyle = diff3
+	# file and directory patterns to ignore across all projects
+	# excludesfile = ~/.config/git/ignore
+
+	# Tool to page through long output (e.g. git log). `less` is default
+	# pager = less
+
+	# Ensure Linux & MacOSX line endings in checked out text files
+	autocrlf = input
+
+[fetch]
+	# Remove deleted remote branches from local repository
+	prune = true
 
 [log]
 	abbrevCommit = true
 
 [push]
-	# Set local brach to track new remote branch automatically
-	# Requires Git 2.37.0
+	# Set local brach to track new remote branch automatically, Git 2.37.0 onward
 	autoSetupRemote = true
 
+[diff]
+  tool = nvimdiff
 
-## ------ Git commands ------ ##
+[merge]
+	# Include common parent when merge conflicts arise
+	conflictstyle = diff3
+
+
+## --- Git commands 
 
 # command line shot cuts
 [alias]
@@ -93,7 +88,11 @@
 	# Set timeout (in 0.1 second steps) before git automatically changes the command
 	# autocorrect = 50
 
+
+## -- Git CLI
+
 [credential "https://github.com"]
 	helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = !/usr/bin/gh auth git-credential
+

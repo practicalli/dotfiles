@@ -1,0 +1,72 @@
+## ------ Identity ------ ##
+# Add details for specific company identity
+# Assumes use of Linux for ~ expansion
+
+# Add identity to all commits
+[user]
+	name = Johnny Stevenson
+
+	# Add company email address to GitHub account
+	# and use when creating SSH key
+	email = "johnny@company-name.com"
+
+  # SSH Key signing with allowed SSH key signatures
+	signingkey = ~/.ssh/id-company.pub
+
+## Identity for using GitHub API
+[github]
+	user = practicalli-johnny
+
+## ------ Git Behaviour ------ ##
+
+[init]
+	# scripts and hooks to add when creating a new local Git repository
+	# templateDir = ~/.config/git/repo-template/
+
+	# default branch name when creating a new local repository
+	defaultBranch = main
+
+[core]
+	# Set which editor to use for editing commit messages (when not included with -m)
+	# VISUAL or EDITOR environment variables also set the choice of editor
+	# vi used if not set.  Typical examples are nvim or emacsclient
+	editor = astronvim
+
+	# file and directory patterns to ignore across all projects
+	excludesfile = ~/.config/git/ignore-company
+
+	# Tool to page through long output (e.g. git log). `less` is default
+	# pager = less
+
+	# Ensure Linux & MacOSX line endings in checked out text files
+	autocrlf = input
+
+[commit]
+	# Default commit message - useful if team has a commit message policy
+	template = ~/.config/git/commit-message-company
+  # Automatically sign every commit
+	gpgsign = true
+
+[tag]
+  # Automatically sign every tag
+	gpgsign = true
+
+[fetch]
+	# Remove deleted remote branches from local repository
+	prune = true
+
+## ------ Security ------ ##
+
+# Use SSH key passphrase stored in MacOSX Keychain with ssh-add command
+# ssh-add --apple-use-keychain $HOME/.ssh/id_ed25519
+# [credential]
+#     helper = osxkeychain
+
+# Use SSH key to sign commits and tags
+[gpg]
+	format = ssh
+
+# Self-define SSH keys that should be considered authentic locally
+[gpg "ssh"]
+	allowedSignersFile = ~/.config/git/allowed-signatures-company
+

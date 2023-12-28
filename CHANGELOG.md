@@ -11,7 +11,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 
+### Added
+- git: ssh key signing
+
 ### Changed
+- git: restructure multiple configs, using relative include file paths
+
 
 ## 2023-09-28
 ### Added

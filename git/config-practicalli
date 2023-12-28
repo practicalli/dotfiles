@@ -1,0 +1,91 @@
+## ------ Identity ------ ##
+
+# Add identity to all commits
+[user]
+	name = Practicalli Engineering
+
+	# Use GitHub no-reply email address to keep real address private
+	email = "engineering@practical.li"
+
+  # SSH Key signing (commits & tags( 
+	signingkey = ~/.ssh/id_ed25519.pub
+
+## Identity for using GitHub API
+[github]
+	user = practicalli-johnny
+
+
+## ------ Security ------ ##
+
+# Use SSH key to sign commits and tags
+[gpg]
+	format = ssh
+
+# Self-define SSH keys that should be considered authentic locally
+[gpg "ssh"]
+	allowedSignersFile = ~/.config/git/allowed-signatures
+
+
+## ------ Git Behaviour ------ ##
+
+[init]
+	# scripts and hooks to add when creating a new local Git repository
+	# templateDir = ~/.config/git/repo-template/
+
+	# default branch name when creating a new local repository
+	defaultBranch = main
+
+[core]
+	# Set which editor to use for editing commit messages (when not included with -m)
+	# VISUAL or EDITOR environment variables also set the choice of editor
+	# vi used if not set.  Typical examples are nvim or emacsclient
+	editor = astronvim
+
+	# file and directory patterns to ignore across all projects
+	excludesfile = ignore
+
+	# Tool to page through long output (e.g. git log). `less` is default
+	# pager = less
+
+	# Ensure Linux & MacOSX line endings in checked out text files
+	autocrlf = input
+
+[commit]
+	# Default commit message - useful if team has a commit message policy
+	template = ~/.config/git/commit-message-practicalli
+  # Automatically sign every commit
+	gpgsign = true
+
+[tag]
+  # Automatically sign every tag
+	gpgsign = true
+
+[fetch]
+	# Remove deleted remote branches from local repository
+	prune = true
+
+[diff]
+  tool = nvimdiff
+
+# [difftool "meld"]
+# 				cmd = meld \"$LOCAL\" \"$REMOTE\"
+# 				path =
+
+
+[merge]
+	# Include common parent when merge conflicts arise
+	conflictstyle = diff3
+
+# [mergetool "meld"]
+# 				cmd = meld \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+# 				trustExitCode = true
+
+
+[log]
+	abbrevCommit = true
+
+[push]
+	# Set local brach to track new remote branch automatically
+	# Requires Git 2.37.0
+	autoSetupRemote = true
+
