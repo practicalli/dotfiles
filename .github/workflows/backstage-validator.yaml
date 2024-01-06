@@ -14,7 +14,7 @@ jobs:
   backstage-validator:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: RoadieHQ/backstage-entity-validator@v0.3.11
         with:
           path: ".backstage/*.yaml"
