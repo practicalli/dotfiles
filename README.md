@@ -2,11 +2,12 @@
 
 Configuration files for tools such as Git, Clojure development tools.
 
-* git - identity, configuration and custom commands
+* git - identity, configuration, SSH signing and custom commands
 * aws - config with profiles and single sign-on with okta
 * regolith2 - 13 tiling manager on Ubuntu linux distribution (tweaks)
 * clojure - [cljstyle](https://github.com/greglook/cljstyle) formatting rules
 * [kitty terminal](https://sw.kovidgoyal.net/kitty/) configuration - font, symbol mappings for nerdfonts, light and dark terminal colorschemes
+* `shell-aliases` common aliases used by all shells (bash, zsh)
 
 
 ## Install
@@ -15,7 +16,7 @@ Practicalli follows the FreeDesktop.org XDG basedir specification for configurat
 
 Learn more about [configuring the FreeDesktop.org XDG basedir standard for development tools](https://practical.li/blog/posts/adopt-FreeDesktop.org-XDG-standard-for-configuration-files/)
 
-```
+```shell
 git clone https://github.com/practicalli/dotfiles.git $XDG_CONFIG_HOME
 ```
 
