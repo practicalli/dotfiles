@@ -29,4 +29,5 @@ Tools with a larger configuration have been separated into their own repositorie
 
 * [practicalli/clojure-lsp-config](https://github.com/practicalli/clojure-lsp-config) - Clojure LSP and cljfmt configuration
 * [practicalli/spacemacs.d](https://github.com/practicalli/spacemacs.d/) - Clojure & LSP focused configuration for Spacemacs
+* [practicalli/astronvim-config](https://github.com/practicalli/astronvim-config)
 * [practicalli/neovim-config](https://github.com/practicalli/neovim-config-redux) - DEPRECATED - Clojure, Conjure & LSP configuration with Fennel and Lua configuration
