@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ### Added
 - git: ssh key signing
+- shell: aliases for editing shell history with fd
 
 ### Changed
 - git: restructure multiple configs, using relative include file paths
