@@ -2,7 +2,7 @@
 
 Configuration files for tools such as Git, Clojure development tools.
 
-* git - identity, configuration, SSH signing and custom commands
+* git - multiple identities select on path, command aliases, clone short-cuts, SSH signing & allowed signatures, inclusive ignore patterns and common configuration options
 * aws - config with profiles and single sign-on with okta
 * regolith2 - 13 tiling manager on Ubuntu linux distribution (tweaks)
 * clojure - [cljstyle](https://github.com/greglook/cljstyle) formatting rules
