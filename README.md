@@ -12,15 +12,19 @@ Configuration files for tools such as Git, Clojure development tools.
 
 ## Install
 
-Practicalli follows the FreeDesktop.org XDG basedir specification for configuration files, with `$XDG_CONFIG_HOME` set to `$HOME/.config`. So this repository can be extracted directly to `$XDG_CONFIG_HOME`
+Practicalli follows the FreeDesktop.org XDG basedir specification for configuration files, with `$XDG_CONFIG_HOME` set to `$HOME/.config`.  Using this directory simplifies the versioning of configuration files, compared to using the root of a user account, i.e. `$HOME`.
 
-Learn more about [configuring the FreeDesktop.org XDG basedir standard for development tools](https://practical.li/blog/posts/adopt-FreeDesktop.org-XDG-standard-for-configuration-files/)
+> Learn more about [configuring the FreeDesktop.org XDG basedir standard for development tools](https://practical.li/blog/posts/adopt-FreeDesktop.org-XDG-standard-for-configuration-files/)
+
+Clone this repository to `$XDG_CONFIG_HOME` to use the configuration straight away.  
 
 ```shell
 git clone https://github.com/practicalli/dotfiles.git $XDG_CONFIG_HOME
 ```
 
-Or fork this repository and copy the configuration directories or specific examples as required.
+Or clone the repository to a project directory and add operating system symlinks from the `$XDG_CONFIG_HOME`, `$HOME/.config` or `$HOME`.  
+
+To use this configuration as a base for your own repository, fork this repository and copy the configuration directories or specific examples as required.
 
 
 ## Specific tool repositories
