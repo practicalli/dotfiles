@@ -1,4 +1,4 @@
-# Shell aliases shared across all shells (zsh, bash)
+# Aliases shared across shells (zsh, bash)
 
 # ------------------------------------------ 
 # Neovim Aliases for multiple configurations
@@ -11,7 +11,7 @@ alias neovide="NVIM_APPNAME=astronvim neovide"
 # ------------------------------------------ 
 
 # ------------------------------------------ 
-# Shell history
+# Zsh history
 # edit entire history
 alias zsh-edit-history="fc -W; astro \"$HISTFILE\"; fc -R"
 
