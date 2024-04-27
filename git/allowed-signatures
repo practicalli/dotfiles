@@ -1,1 +1,7 @@
 engineering@practical.li ssh-ed25519 ******************************************************************** engineering@practical.li
+# ---------------------------------------------------------
+# Allowed SSH keys for Git commit signing
+#
+# - Used locally to check commits are signed by a known key
+# - no space allowed after comment - invalid key error
+# ---------------------------------------------------------
