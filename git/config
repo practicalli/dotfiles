@@ -83,10 +83,19 @@
 	# delete locate branches merged into the remote
 	delete-local-merged = "!git fetch && git branch --merged | egrep -v 'master' | xargs git branch -d"
 
-# Clone short-cuts
+
+# --- Git clone aliases
+# e.g `git clone p:repo-name`
+# host names defined in ~./ssh/config
+
 [url "git@github.com:practicalli/"]
-	# git clone practicalli:repo-name
 	insteadOf = p:
+
+[url "git@engineering:practicalli/"]
+	insteadOf = e:
+
+[url "git@griffin:griffinbank/"]
+	insteadOf = g:
 
 [help]
 	# Automatically change incorrectly typed commands
