@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+# Check SHA of public SSH key as shown on GitHub SSH keys page
+# - matches authentication and signing keys
+
+ssh-keygen -lf "$@"
