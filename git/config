@@ -88,9 +88,12 @@
 # e.g `git clone p:repo-name`
 # host names defined in ~./ssh/config
 
+# Clone short-cuts
+# git clone p:repo-name
 [url "git@github.com:practicalli/"]
 	insteadOf = p:
 
+# git clone e:repo-name
 [url "git@engineering:practicalli/"]
 	insteadOf = e:
 
