@@ -1,6 +1,6 @@
 # Aliases shared across shells (zsh, bash)
 
-# ------------------------------------------ 
+# ------------------------------------------
 # Neovim Aliases for multiple configurations
 alias astro="NVIM_APPNAME=nvim-astro nvim"
 alias astrotemplate="NVIM_APPNAME=nvim-astronvim-template nvim"
@@ -10,16 +10,16 @@ alias lazyvim="NVIM_APPNAME=nvim-lazyvim nvim"
 
 # Neovide alias with AstroNvim configuration
 alias neovide="NVIM_APPNAME=nvim-astro neovide"
-# ------------------------------------------ 
+# ------------------------------------------
 
-# ------------------------------------------ 
+# ------------------------------------------
 # Zsh history
 # edit entire history
 alias zsh-edit-history="fc -W; astro \"$HISTFILE\"; fc -R"
 
 # edit previous command in history
 alias zsh-edit-last-command="fc -e astro -1"
-# ------------------------------------------ 
+# ------------------------------------------
 
 # ------------------------------------------
 #  Kitty Terminal
