@@ -1,14 +1,50 @@
+# --------------------------------------
+!! Regolith theme
 !! Regolith theme - added by `regolith-look set gruvbox`
 regolith.look.path: /usr/share/regolith-look/gruvbox
 
 !! Postion of i3 status bar
 wm.bar.position:	top
+# --------------------------------------
 
-! Desktop theme
+# --------------------------------------
+!! Desktop theme
 gnome.wm.theme:	Gruvbox
 Xcursor.size:   32
 Xcursor.theme:	Redglass
+# --------------------------------------
 
+# --------------------------------------
+! Background images
+! regolith.wallpaper.file: /usr/share/images/desktop-base/login-background.svg
+regolith.wallpaper.file: /usr/share/wallpapers/SpaceFun/contents/images/3840x2160.svg
+regolith.lockscreen.wallpaper.file: /usr/share/wallpapers/SpaceFun/contents/images/3840x2160.svg
+# --------------------------------------
+
+# --------------------------------------
+!! Experiments - work in progress
+bindsym $mod+x move workspace to output next
+bindsym $mod+x move workspace to output eDP HDMI-A-0
+# --------------------------------------
+
+# --------------------------------------
+# Workspace Monitor assignment
+# List Monitors
+# 0: +*eDP 1920/309x1080/174+0+1440  eDP
+# 1: +HDMI-A-0 3440/800x1440/335+0+0  HDMI-A-0
+wm.workspace 1 output eDP
+wm.workspace 2 output HDMI-A-0
+wm.workspace 3 output HDMI-A-0
+wm.workspace 4 output HDMI-A-0
+wm.workspace 5 output HDMI-A-0
+wm.workspace 6 output HDMI-A-0
+wm.workspace 7 output HDMI-A-0
+wm.workspace 8 output HDMI-A-0
+wm.workspace 9 output HDMI-A-0
+wm.workspace 10 output HDMI-A-0
+# --------------------------------------
+
+# --------------------------------------
 !! Workspace Icons
 !! Icons to represent purpose of each workspace:
 !! issues, terminal, Clojure, db, chat, settings, music, meetings/screencats, browser
@@ -22,4 +58,4 @@ wm.workspace.07.name:	7:<span> </span><span font_desc='FontAwesome 14'>7 </span>
 wm.workspace.08.name:	8:<span> </span><span font_desc='FontAwesome 14'>8 </span><span foreground='#F7F7F7'></span><span> </span>
 wm.workspace.09.name:	9:<span> </span><span font_desc='FontAwesome 14'>9 </span><span foreground='#F7F7F7'></span><span> </span>
 wm.workspace.10.name:	10:<span> </span><span font_desc='FontAwesome 14'>10 </span><span foreground='#ee8424'></span><span> </span>
-
+# --------------------------------------
