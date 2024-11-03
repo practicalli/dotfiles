@@ -160,6 +160,15 @@ build-clean: ## Clean build assets or given directory
 
 # ------------------------------------ #
 
+# ------- Version Control ------------ #
+git-sr:  ## check status of all git repos under current directory
+	$(info --------- Multiple Git Status ---------)
+	mgitstatus -e --flatten
+
+git-status:  ## check status of all git repos under current directory
+	$(info --------- Multiple Git Status ---------)
+	mgitstatus
+# ------------------------------------ #
 
 # ------- Documentation Generation ---------- #
 
@@ -226,4 +235,3 @@ test-ci: deps  ## Test runner for integration tests
 all: test-ci dist clean  ## Call test-ci dist and clean targets, used for CI
 
 # ------------------------------------ #
-

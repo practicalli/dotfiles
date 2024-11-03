@@ -16,6 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - shell: aliases for editing shell history with fd
 - git: aliases for git clone `git clone p:repo-name`
 - zsh: neovim config selector functions
+- make: `git-sr` and `git-status` to check status of all repositories
 
 ### Changed
 - git: restructure multiple configs, using relative include file paths
@@ -28,4 +29,3 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ## 2023-09-28
 ### Added
 - add changelog
-
