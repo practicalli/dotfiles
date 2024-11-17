@@ -1,9 +1,12 @@
 # ------------------------------------------
 # Practicalli Makefile
 #
-# Consistent set of targets to support local development of Clojure
-# and build the Clojure service during CI deployment
+# Consistent set of targets to support Clojure development
+# - build jars and uberjars
+# -
 #
+# `-` before a command ignores any errors returned
+
 # Requirements
 # - cljstyle
 # - Clojure CLI aliases from practicalli/clojure-cli-config
@@ -16,189 +19,193 @@
 # - mega-linter-runner
 #
 # ------------------------------------------
-
-
 # .PHONY: ensures target used rather than matching file name
 # https://makefiletutorial.com/#phony
-.PHONY: all lint deps dist pre-commit-check repl test test-ci test-watch clean
+.PHONY: all clean  deps dist lint pre-commit-check repl test test-ci test-watch
 
-
-# ------- Makefile Variables --------- #
-
+# -- Makefile Variables ---------------- #
 # run help if no target specified
 .DEFAULT_GOAL := help
+
+OUTDATED_FILE := outdated-$(shell date +%y-%m-%d-%T).org
 
 # Column the target description is printed from
 HELP-DESCRIPTION-SPACING := 24
 
-# Example variables (not currently used)
-# SWAGGER-EDITOR-DOCKER-IMAGE := swaggerapi/swagger-editor
-# GAMEBOARD-API-DOCKER-CONTAINER-NAME := gameboard-api-service
-
 # Makefile file and directory name wildcard
 # EDN-FILES := $(wildcard *.edn)
 
-# ------------------------------------ #
+# Tool variables
+# MEGALINTER_RUNNER := npx mega-linter-runner --flavor documentation --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --remove-container
+MEGALINTER_RUNNER := npx mega-linter-runner --flavor java --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --remove-container
+# -------------------------------------- #
 
-
-# ------- Help ----------------------- #
-
+# -- Help ------------------------------ #
 # Source: https://nedbatchelder.com/blog/201804/makefile_help_target.html
 
 help:  ## Describe available tasks in Makefile
 	@grep '^[a-zA-Z]' $(MAKEFILE_LIST) | \
 	sort | \
 	awk -F ':.*?## ' 'NF==2 {printf "\033[36m  %-$(HELP-DESCRIPTION-SPACING)s\033[0m %s\n", $$1, $$2}'
+# -------------------------------------- #
 
-# ------------------------------------ #
+# -- Clojure Projects ------------------ #
+service:  ## New project with practicalli/service template
+	$(info -- Create Service Project ----------------)
+	clojure -T:project/create :template practicalli/service :name practicalli/gameboard
 
-dist: deps  ## Build and package Clojure service
-	$(info --------- Build and Package Clojure service ---------)
-	$(info Prerequisites newer than target)
-	echo $?
-	clojure -X:package/uberjar
+service-donut:  ## New project with practicalli/service template & Donut
+	$(info -- Create Service Project with Donut -----)
+	clojure -T:project/create :template practicalli/service :name practicalli/gameboard :target-dir gameboard-donut
 
-# Remove files and directories after build tasks
-# `-` before the command ignores any errors returned
-clean:  ## Clean build temporary files
-	$(info --------- Clean Clojure classpath cache ---------)
-	- rm -rf ./.cpcache
+service-integrant:  ## New project with practicalli/service template & Integrant
+	$(info -- Create Service Project with Integrant -)
+	clojure -T:project/create :template practicalli/service :name practicalli/gameboard :target-dir gameboard-integrant
 
-# ------------------------------------ #
+landing-page:  ## New project with practicalli/landing-page template local
+	$(info -- Run Rebel REPL ------------------------)
+	clojure -T:project/create :template practicalli/landing-page :name practicalli/landing-page
 
+outdated: ## Check deps.edn & GitHub actions for new versions
+	$(info -- Search for outdated libraries ---------)
+	- clojure -T:search/outdated > $(OUTDATED_FILE)
+# -------------------------------------- #
 
-# ------- Clojure Development -------- #
+# -- Clojure Workflow ------------------ #
+repl: rebel  ## Start default REPL configuration
 
-repl:  ## Run Clojure REPL with rich terminal UI (Rebel Readline)
-	$(info --------- Run Rebel REPL ---------)
-	clojure -M:repl/reloaded
+rebel:  ## Run Clojure REPL with rich terminal UI (Rebel Readline)
+	$(info -- Run Rebel REPL ------------------------)
+	clojure -M:dev/env:test/env:repl/rebel
+
+reloaded:  ## Run Clojure REPL with rich terminal UI (Rebel Readline)
+	$(info -- Run Rebel REPL ------------------------)
+	clojure -M:dev/env:test/env:repl/reloaded
 
 deps: deps.edn  ## Prepare dependencies for test and dist targets
-	$(info --------- Download test and service libraries ---------)
-	clojure -P -X:build
+	$(info -- Download library dependencies ---------)
+	clojure -P -X:test/env:build
 
-dist: build-uberjar ## Build and package Clojure service as Uberjar
+clean:  ## Clean Clojure tooling temporary files
+	$(info -- Clean Clojure temporary files ---------)
+	- rm -rf ./.cpcache ./.clj-kondo ./.lsp
+# -------------------------------------- #
 
-# Remove files and directories after build tasks
-# `-` before the command ignores any errors returned
-clean-classpath:  ## Clean build temporary files
-	$(info --------- Clean Clojure classpath cache ---------)
-	- rm -rf ./.cpcache
-
-# ------------------------------------ #
-
-
-# ------- Testing -------------------- #
-
-test-config:  ## Run unit tests - stoping on first error
-	$(info --------- Runner Configuration ---------)
-	clojure -M:test/env:test/run --print-config
-
-test:  ## Run unit tests - stoping on first error
-	$(info --------- Runner for unit tests ---------)
-	clojure -X:test/env:test/run
-
-
-test-all:  ## Run all unit tests regardless of failing tests
-	$(info --------- Runner for all unit tests ---------)
-	clojure -X:test/env:test/run :fail-fast? false
-
-test-watch:  ## Run tests when changes saved, stopping test run on first error
-	$(info --------- Watcher for unit tests ---------)
-	clojure -X:test/env:test/run :watch? true
-
-test-watch-all:  ## Run all tests when changes saved, regardless of failing tests
-	$(info --------- Watcher for unit tests ---------)
-	clojure -X:test/env:test/run :fail-fast? false :watch? true
-
-# ------------------------------------ #
-
-
-
-# ------- Code Quality --------------- #
-
-pre-commit: format-check lint test  ## Run format, lint and test targets
-
-format-check: ## Run cljstyle to check the formatting of Clojure code
-	$(info --------- cljstyle Runner ---------)
-	cljstyle check
-
-format-fix:  ## Run cljstyle and fix the formatting of Clojure code
-	$(info --------- cljstyle Runner ---------)
-	cljstyle fix
-
-lint:  ## Run MegaLinter Java Flavor with custom configuration
-	$(info --------- MegaLinter Runner ---------)
-	mega-linter-runner --flavor java --env 'MEGALINTER_CONFIG=.github/config/megalinter.yaml'
-
-lint-clean:  ## Clean MegaLinter report information
-	$(info --------- MegaLinter Clean Reports ---------)
-	- rm -rf ./megalinter-reports
-
-# ------------------------------------ #
-
-
-# -------- Clojure tools.build tasks --------------- #
-
+# -------- Build tasks ----------------- #
 build-config: ## Pretty print build configuration
-	$(info --------- View current build config ---------)
+	$(info -- View current build config -------------)
 	clojure -T:build config
 
-build-jar: ## Build a jar archive of Clojure project
-	$(info --------- Build library jar ---------)
-	clojure -T:build jar
+# build-jar: ## Build a jar archive of Clojure project
+		$(info -- Build library jar -------------------)
+		clojure -T:build jar
 
-build-uberjar: ## Build a uberjar archive of Clojure project & Clojure runtime
-	$(info --------- Build service Uberjar  ---------)
+# build-uberjar: ## Build a uberjar archive of Clojure project & Clojure runtime
+		$(info -- Build service Uberjar  --------------)
+		clojure -T:build uberjar
+
+build-uberjar-echo: ## Build a uberjar archive of Clojure project & Clojure runtime
+	$(info -- Build service Uberjar  ----------------)
 	$(info Prerequisites newer than target)
 	echo $?
 	clojure -T:build uberjar
 
 build-clean: ## Clean build assets or given directory
-	$(info --------- Clean Build  ---------)
+	$(info -- Clean Build  --------------------------)
 	clojure -T:build clean
 
-# ------------------------------------ #
+dist: deps build-uberjar ## Build and package Clojure service
+# -------------------------------------- #
 
-# ------- Version Control ------------ #
-git-sr:  ## check status of all git repos under current directory
-	$(info --------- Multiple Git Status ---------)
+# ------- Testing ---------------------- #
+test-config:  ## Print Kaocha test runner configuration
+		$(info -- Runner Configuration ----------------)
+		clojure -M:test/env:test/run --print-config
+
+test-profile:  ## Profile unit test speed, showing 3 slowest tests
+		$(info -- Runner Profile Tests ----------------)
+		clojure -M:test/env:test/run --plugin  kaocha.plugin/profiling
+
+test:  ## Run unit tests - stoping on first error
+	$(info -- Runner for unit tests -----------------)
+	clojure -X:test/env:test/run
+
+test-all:  ## Run all unit tests regardless of failing tests
+	$(info -- Runner for all unit tests -------------)
+	clojure -X:test/env:test/run :fail-fast? false
+
+test-watch:  ## Run tests when changes saved, stopping test run on first error
+	$(info -- Watcher for unit tests, fail fast -----)
+	clojure -X:test/env:test/run :watch? true
+
+test-watch-all:  ## Run all tests when changes saved, regardless of failing tests
+	$(info -- Watcher for unit tests ----------------)
+	clojure -X:test/env:test/run :fail-fast? false :watch? true
+# -------------------------------------- #
+
+# ------- Code Quality ----------------- #
+pre-commit-check: format-check lint test  ## Run format, lint and test targets
+
+format-check: ## Run cljstyle to check the formatting of Clojure code
+	$(info -- cljstyle Runner show errors -----------)
+	cljstyle check
+
+format-fix:  ## Run cljstyle and fix the formatting of Clojure code
+	$(info -- cljstyle Runner fix errors ------------)
+	cljstyle fix
+
+lint:  ## Run MegaLinter with custom configuration (node.js required)
+	$(info -- MegaLinter Runner ---------------------)
+	$(MEGALINTER_RUNNER)
+
+lint-fix:  ## Run MegaLinter with applied fixes and custom configuration (node.js required)
+	$(info -- MegaLinter Runner fix errors ----------)
+	$(MEGALINTER_RUNNER) --fix
+
+lint-clean:  ## Clean MegaLinter report information
+	$(info -- MegaLinter Clean Reports --------------)
+	- rm -rf ./megalinter-reports
+
+megalinter-upgrade:  ## Upgrade MegaLinter config to latest version
+	$(info -- MegaLinter Upgrade Config -------------)
+	npx mega-linter-runner@latest --upgrade
+# -------------------------------------- #
+
+# ------- Version Control -------------- #
+git-sr:  ## status list of git repos under current directory
+	$(info -- Multiple Git Repo Status --------------)
 	mgitstatus -e --flatten
 
-git-status:  ## check status of all git repos under current directory
-	$(info --------- Multiple Git Status ---------)
+git-status:  ## status details of git repos under current directory
+	$(info -- Multiple Git Status -------------------)
 	mgitstatus
-# ------------------------------------ #
+# -------------------------------------- #
 
-# ------- Documentation Generation ---------- #
-
+# -- Documentation Generation ---------- #
 docs:  ## Run mkdocs server
-	$(info --------- Mkdocs Local Server ---------)
+	$(info -- Mkdocs Local Server -------------------)
 	mkdocs serve --dev-addr localhost:7777
+# -------------------------------------- #
 
-# ------------------------------------ #
+# ------- Docker Containers ------------ #
+docker-build:  ## Build Clojure project and run with docker compose
+	$(info -- Docker Compose Build ------------------)
+	docker compose up --build --detach
 
+docker-build-clean:  ## Build Clojure project and run with docker compose, removing orphans
+	$(info -- Docker Compose Build, remove orphans --)
+	docker compose up --build --remove-orphans --detach
 
-# ------- Docker Containers ---------- #
-
-docker-build:  ## Build Clojure Service with docker compose
-	$(info --------- Docker Compose Build ---------)
-	docker compose up --build
-
-docker-build-clean:  ## Build Clojure Service with docker compose, removing orphans
-	$(info --------- Docker Compose Build - remove orphans ---------)
-	docker compose up --build --remove-orphans
-
-docker-down:  ## Shut down Clojure service using docker compose
-	$(info --------- Docker Compose Down ---------)
+docker-down:  ## Shut down containers in docker compose
+	$(info -- Docker Compose Down -------------------)
 	docker compose down
 
 docker-inspect:  ## Inspect given docker image - image-id=12e45fg89
-	$(info --------- Docker Image Prune ---------)
+	$(info -- Docker Image Prune --------------------)
 	docker inspect --format='{{json .Config}}' $(image-id) | jq
 
 docker-image-prune:  ## Prune docker images
-	$(info --------- Docker Image Prune ---------)
+	$(info -- Docker Image Prune --------------------)
 	docker image prune
 
 docker-container-prune:  ## Prune docker containers
@@ -207,31 +214,26 @@ docker-container-prune:  ## Prune docker containers
 
 docker-prune: docker-image-prune docker-image-prune  ## Prune docker images and containers
 
-# --- Local Swagger editor via swagger-editor.yml docker compose configuration
 swagger-editor:  ## Start Swagger Editor in Docker
-	$(info --------- Run Swagger Editor at locahost:8282 ---------)
-	docker compose -f swagger-editor.yaml up -d swagger-editor
+	$(info -- Run Swagger Editor at locahost:8282 ---)
+	docker compose -f swagger-editor.yaml up -d swagger-editor --detatch
 
 swagger-editor-down:  ## Stop Swagger Editor in Docker
-	$(info --------- Run Swagger Editor at locahost:8282 ---------)
+	$(info -- Run Swagger Editor at locahost:8282 ---)
 	docker compose -f swagger-editor.yaml down
+# -------------------------------------- #
 
-# ------------------------------------ #
-
-
-# ------ Continuous Integration ------ #
-
+# ------ Continuous Integration -------- #
 # .DELETE_ON_ERROR: halts if command returns non-zero exit status
 # https://makefiletutorial.com/#delete_on_error
 
 # TODO: focus runner on ^:integration` tests
 test-ci: deps  ## Test runner for integration tests
-	$(info --------- Runner for integration tests ---------)
-	clojure -P -X:env/test:test/run
+	$(info -- Runner for integration tests ---------)
+	clojure -P -X:test/env:test/run
 
 # Run tests, build & package the Clojure code and clean up afterward
 # `make all` used in Docker builder stage
 .DELETE_ON_ERROR:
 all: test-ci dist clean  ## Call test-ci dist and clean targets, used for CI
-
-# ------------------------------------ #
+# -------------------------------------- #

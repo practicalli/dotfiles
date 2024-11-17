@@ -25,6 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - dev: upload-artifact action version 4 in megalinter workflow
 - dev: disable REPOSITORY_TRIVY - failing on healthcheck in Dockerfile (healthcheck in compose.yaml)
 - dev: backsage-entity-validator updated to v0.5.0
+- dev: update Makefile with all targets used for Practicalli
 
 
 ## 2023-09-28
