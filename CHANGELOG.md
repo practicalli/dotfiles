@@ -19,6 +19,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - make: `git-sr` and `git-status` to check status of all repositories
 - os: hyprland configuration files
 - kitty: example transparent_background options for linux
+- make: mkdocs and python virtual environment tasks
 
 ### Changed
 - git: restructure multiple configs, using relative include file paths

@@ -38,6 +38,8 @@ HELP-DESCRIPTION-SPACING := 24
 # Tool variables
 # MEGALINTER_RUNNER := npx mega-linter-runner --flavor documentation --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --remove-container
 MEGALINTER_RUNNER := npx mega-linter-runner --flavor java --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --remove-container
+
+MKDOCS_SERVER := mkdocs serve --dev-addr localhost:7777
 # -------------------------------------- #
 
 # -- Help ------------------------------ #
@@ -181,10 +183,22 @@ git-status:  ## status details of git repos under current directory
 	mgitstatus
 # -------------------------------------- #
 
-# -- Documentation Generation ---------- #
-docs:  ## Run mkdocs server
-	$(info -- Mkdocs Local Server -------------------)
-	mkdocs serve --dev-addr localhost:7777
+# --- Documentation Generation  -------- #
+python-venv:  ## Enable Python Virtual Environment for MkDocs
+    $(info -- Mkdocs Local Server -----------------)
+    source ~/.local/venv/bin/activate
+
+docs: python-venv  ## Build and run mkdocs in local server (python venv)
+    $(info -- Mkdocs Local Server -----------------)
+    source ~/.local/venv/bin/activate && $(MKDOCS_SERVER)
+
+docs-changed: python-venv  ## Build only changed files and run mkdocs in local server (python venv)
+    $(info -- Mkdocs Local Server -----------------)
+    source ~/.local/venv/bin/activate && $(MKDOCS_SERVER) --dirtyreload
+
+docs-build: python-venv  ## Build mkdocs (python venv)
+    $(info -- Mkdocs Local Server -----------------)
+    source ~/.local/venv/bin/activate && mkdocs build
 # -------------------------------------- #
 
 # ------- Docker Containers ------------ #
