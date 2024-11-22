@@ -21,7 +21,7 @@
 # ------------------------------------------
 # .PHONY: ensures target used rather than matching file name
 # https://makefiletutorial.com/#phony
-.PHONY: all clean  deps dist lint pre-commit-check repl test test-ci test-watch
+.PHONY: all clean  deps dist docs lint pre-commit-check repl test test-ci test-watch
 
 # -- Makefile Variables ---------------- #
 # run help if no target specified
@@ -184,21 +184,17 @@ git-status:  ## status details of git repos under current directory
 # -------------------------------------- #
 
 # --- Documentation Generation  -------- #
-python-venv:  ## Enable Python Virtual Environment for MkDocs
-    $(info -- Mkdocs Local Server -----------------)
-    source ~/.local/venv/bin/activate
+docs: ## Build and run mkdocs in local server (python venv)
+	$(info -- MkDocs Local Server -----------------)
+	. ~/.local/venv/bin/activate; $(MKDOCS_SERVER)
 
-docs: python-venv  ## Build and run mkdocs in local server (python venv)
-    $(info -- Mkdocs Local Server -----------------)
-    source ~/.local/venv/bin/activate && $(MKDOCS_SERVER)
+docs-changed:  ## Build only changed files and run mkdocs in local server (python venv)
+	$(info -- Mkdocs Local Server -----------------)
+	. ~/.local/venv/bin/activate; $(MKDOCS_SERVER) --dirtyreload
 
-docs-changed: python-venv  ## Build only changed files and run mkdocs in local server (python venv)
-    $(info -- Mkdocs Local Server -----------------)
-    source ~/.local/venv/bin/activate && $(MKDOCS_SERVER) --dirtyreload
-
-docs-build: python-venv  ## Build mkdocs (python venv)
-    $(info -- Mkdocs Local Server -----------------)
-    source ~/.local/venv/bin/activate && mkdocs build
+docs-build:  ## Build mkdocs (python venv)
+	$(info -- Mkdocs Local Server -----------------)
+	. ~/.local/venv/bin/activate; mkdocs build
 # -------------------------------------- #
 
 # ------- Docker Containers ------------ #
