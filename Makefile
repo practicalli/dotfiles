@@ -184,16 +184,25 @@ git-status:  ## status details of git repos under current directory
 # -------------------------------------- #
 
 # --- Documentation Generation  -------- #
+
+python-venv:
+	$(info -- Create Python Virtual Environment -----)
+	python3 -m venv ~/.local/venv
+
+mkdocs-install:
+	$(info -- Install Material for MkDocs -----------)
+	pip install mkdocs-material mkdocs-callouts mkdocs-glightbox mkdocs-git-revision-date-localized-plugin mkdocs-redirects mkdocs-rss-plugin pillow cairosvg
+
 docs: ## Build and run mkdocs in local server (python venv)
-	$(info -- MkDocs Local Server -----------------)
+	$(info -- MkDocs Local Server -------------------)
 	. ~/.local/venv/bin/activate; $(MKDOCS_SERVER)
 
 docs-changed:  ## Build only changed files and run mkdocs in local server (python venv)
-	$(info -- Mkdocs Local Server -----------------)
+	$(info -- Mkdocs Local Server -------------------)
 	. ~/.local/venv/bin/activate; $(MKDOCS_SERVER) --dirtyreload
 
 docs-build:  ## Build mkdocs (python venv)
-	$(info -- Mkdocs Local Server -----------------)
+	$(info -- Mkdocs Local Server -------------------)
 	. ~/.local/venv/bin/activate; mkdocs build
 # -------------------------------------- #
 
