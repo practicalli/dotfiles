@@ -191,7 +191,7 @@ python-venv:
 
 mkdocs-install:
 	$(info -- Install Material for MkDocs -----------)
-	pip install mkdocs-material mkdocs-callouts mkdocs-glightbox mkdocs-git-revision-date-localized-plugin mkdocs-redirects mkdocs-rss-plugin pillow cairosvg
+	. ~/.local/venv/bin/activate; pip install mkdocs-material mkdocs-callouts mkdocs-glightbox mkdocs-git-revision-date-localized-plugin mkdocs-redirects mkdocs-rss-plugin pillow cairosvg --upgrade
 
 docs: ## Build and run mkdocs in local server (python venv)
 	$(info -- MkDocs Local Server -------------------)
