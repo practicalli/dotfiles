@@ -20,6 +20,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - os: hyprland configuration files
 - kitty: example transparent_background options for linux
 - make: mkdocs and python virtual environment tasks
+- git: example diff and merg config for meld
 
 ### Changed
 - git: restructure multiple configs, using relative include file paths

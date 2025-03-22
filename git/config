@@ -65,6 +65,15 @@
 	# Include common parent when merge conflicts arise
 	conflictstyle = diff3
 
+# Using meld external visual diff tool
+# [difftool "meld"]
+# 				cmd = meld \"$LOCAL\" \"$REMOTE\"
+# 				path =
+#
+# [mergetool "meld"]
+# 				cmd = meld \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+# 				trustExitCode = true
+
 
 # --- Git commands 
 
