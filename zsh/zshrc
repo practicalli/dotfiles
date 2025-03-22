@@ -1,38 +1,41 @@
+# ----------------------------------------
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+# ----------------------------------------
 
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+# ----------------------------------------
+# Prezto
+# Execute commands at the start of an interactive session.
 
-# Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
+# ----------------------------------------
 
-# Customize to your needs...
+# ----------------------------------------
+# Shell Prompt
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# Powerlevel10k
+# To customize prompt, run `p10k configure`
 # [[ ! -f $XDG_CONFIG_HOME/zsh/.p10k.zsh ]] || source $XDG_CONFIG_HOME~zsh/.p10k.zsh
-
-
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+# ----------------------------------------
 
-
+# ----------------------------------------
 # Shell Aliases
 [[ ! -f ~/.config/shell-aliases ]] || source ~/.config/shell-aliases
+# ----------------------------------------
+
+# ----------------------------------------
+# Neovim
 
 # Neovim Selector
 nvim-selector() {
-  select config in nvim-astro nvim-astronvim-template nvim-lazyvim nvim-kickstart 
+  select config in nvim-astro nvim-astronvim-template nvim-lazyvim nvim-kickstart
   do NVIM_APPNAME=nvim-$config nvim $@; break; done
 }
 
@@ -40,13 +43,13 @@ nvim-selector() {
 nvim-fuzy-find() {
   # Assumes all configs exist in directories named ~/.config/nvim-*
   local config=$(fdfind --max-depth 1 --glob 'nvim-*' ~/.config | fzf --prompt="Neovim Configs > " --height=15% --layout=reverse --border --exit-0)
- 
+
   # If I exit fzf without selecting a config, don't open Neovim
   [[ -z $config ]] && echo "No config selected" && return
- 
+
   # Open Neovim with the selected config
   NVIM_APPNAME=$(basename $config) nvim $@
 }
 
 # Alternatives: https://gist.github.com/elijahmanor/b279553c0132bfad7eae23e34ceb593b
-
+# ----------------------------------------

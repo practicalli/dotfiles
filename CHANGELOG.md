@@ -36,6 +36,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - dev: update Makefile with all targets used for Practicalli
 - dev: upgrade to megalinter version 8
 - kitty: nerdfonts bundled, symbol config redundant
+- zsh: prezto config format for readability
 
 ## 2023-09-28
 ### Added
