@@ -1,0 +1,144 @@
+# Pre-commit hooks
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.3.0  # Use the ref you want to point at
+  hooks:
+
+  # Protect specific branches from direct checkins
+  # - main protected if no branches specified
+  - id: no-commit-to-branch
+    # set the branch to protect, multiple branches can be defined
+    # args: [--branch, staging, --branch, main]
+    # protect branches that match a supplied regex
+    # args: [--pattern, release/.*]
+
+  # Prevent files >100kb being committed.
+  - id: check-added-large-files
+    args: ['--maxkb=100']
+
+  # Checks for dangling symlinks
+  - id: check-symlinks
+
+
+ # ------------------------
+ # Formatting
+
+  # Remove trailing whitespace from end of each lines
+  - id: trailing-whitespace
+    # preserve Markdown hard linebreaks use
+    # args: [--markdown-linebreak-ext=md]
+    # treat all files as markdown
+    # args: [--markdown-linebreak-ext=*]
+    # specify a custom set of characters to trim
+    # args: [--chars,"<chars to trim>"].
+
+  # Ensure files end in a newline and only a newline
+  - id: end-of-file-fixer
+
+  # Check non-binary executables have a proper shebang
+  - id: check-executables-have-shebangs
+
+  # Check non-binary executables are marked executable
+  - id: check-shebang-scripts-are-executable
+
+  # Checks JSON files are pretty - keys are sorted and indented
+  - id: pretty-format-json
+    # automatically format JSON files
+    # args: [--autofix]
+    # Control indentation - number of spaces or string of whitespace - defaults to 2 spaces
+    # args: [--indent]
+    # preserve unicode characters instead of converting to escape sequences
+    # args: [--no-ensure-ascii]
+    # when autofixing, retain the original key ordering (instead of sorting keys)
+    # args: [--no-sort-keys]
+    # Keys to keep at the top of mappings
+    # args: [--top-keys comma,separated,keys]
+
+  # Sorts simple YAML that consist only of top-level keys, preserving comments and blocks
+  # - id: sort-simple-yaml
+    # File must be specified, no default file name
+    # files: ^config/simple/
+
+
+ # ------------------------
+ # Security
+
+  # Checks for AWS CLI secrets
+  - id: detect-aws-credentials
+  # additional AWS CLI configuration files (multiple args allowed)
+  #   args: ['--credentials-file CREDENTIALS_FILE']
+  #   Allow hook to pass when no credentials are detected
+  #   args: ['--allow-missing-credentials ']
+
+  # Checks for the existence of private keys (PGP)
+  - id: detect-private-key
+
+
+  # ------------------------
+  # Syntax checking
+
+  # Attempts to load all JSON files to verify syntax
+  # - id: check-json
+
+  # Attempts to load all YAML files to verify syntax
+  # - id: check-yaml
+  #   allow muti-document syntax
+  #   args: ['--allow-multiple-documents']
+  #   parse yaml files rather than load (when using uncommon syntax extensions)
+  #   args: ['--unsafe']
+
+  # Attempts to load all XML files to verify syntax
+  # - id: check-xml
+
+  # Attempts to load all TOML files to verify syntax
+  # - id: check-toml
+
+
+# ------------------------
+# Issue Management
+
+# - repo: https://github.com/benmezger/gjira
+#   rev: master
+#   hooks:
+#     - id: gjira
+#       args: ["--board=<board/project name>",
+#             "--template=git-commit-jira.template",
+#             "--regex=ISSUE-\d+"]
+
+# git-commit-template example
+# Jira issue: [{{ key }}]
+# {% if parent__key %}Jira story: [{{ parent__key }}]{% endif %}
+# {% if summary %}Jira summary: {{ summary }}{% endif %}
+
+# Set environment variables on OS for Atlassian server access
+# export jiraserver="https://domain.atlassian.net"
+# export jirauser="your@email.com"
+# from: https://id.atlassian.com/manage-profile/security/api-tokens
+# export jiratoken="token"
+
+# Pre-commit
+# - repo: https://github.com/benmezger/gjira
+#   rev: feat/click-args
+#   hooks:
+#     ....
+#     - id: gjira-check-branch
+#       language_version: python3
+#       args: ["--regex=^(feat|refactor|fix|chore)/.*$|^(master|dev(elop)?)$"]
+
+
+# ------------------------
+# Database and SQL
+
+-   repo: https://github.com/purcell/sqlint
+    rev: master
+    hooks:
+    -   id: sqlint
+
+
+
+# ------------------------
+# Clojure development
+#
+# TODO: running kaocha test runner
+# TODO: run cljstyle
+# TODO: run cljfmt
