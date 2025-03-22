@@ -1,0 +1,59 @@
+# ------------------------------------------
+# SSH Configuration - Practicalli
+#
+# - Remote Clojure Server nREPL connection
+# - Multiple SSH Keys for GitHub
+# ------------------------------------------
+
+# ------------------------------------------
+# Remote Clojure Servers
+
+Host remote-server
+  HostName 18.156.1.55
+  IdentityFile /home/practicalli/.ssh/shared-clojure-server.pem
+  User ubuntu
+  PasswordAuthentication yes
+  LocalForward 1234 localhost:1234
+  Port 22
+
+Host local-server
+  HostName 192.168.0.238
+  # IdentityFile /home/practicalli/.ssh/joint-clojure-machine.pem
+  User practicalli
+  PasswordAuthentication yes
+  # Start nREPL server on port 1234 and connect via local port forwarding
+  LocalForward 1234 localhost:1234
+  Port 22
+# ------------------------------------------
+
+# ------------------------------------------
+# Host Aliases for GitHub Multiple SSH keys
+# - HostName is used as connection domain
+
+Host community
+  HostName github.com
+  IdentityFile ~/.ssh/community
+
+Host commercial
+  HostName github.com
+  IdentityFile ~/.ssh/commercial
+
+Host engineering
+  HostName github.com
+  IdentityFile ~/.ssh/practicalli-engineering
+
+Host personal
+  HostName github.com
+  IdentityFile ~/.ssh/practicalli-johnny
+# ------------------------------------------
+
+# ------------------------------------------
+# MacOSX
+
+# `UseKeyChain` required for MacOSX keychain access
+# Host macosx
+#   HostName github.com
+#   AddKeysToAgent yes
+#   UseKeychain yes
+#   IdentityFile ~/.ssh/commercial
+# ------------------------------------------

@@ -25,6 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - git: example global ignore patterns inclusive
 - git: includeif hasconfig conditional config inclusion examples
 - git: pre-commit hooks examples
+- ssh: example config with multiple keys & remote repl pem
 
 ### Changed
 - git: restructure multiple configs, using relative include file paths
