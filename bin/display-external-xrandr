@@ -1,0 +1,11 @@
+## Display on an external screen
+
+## Check the device you are connected to with xrandr -q
+
+if (S1 = '')
+  xrandr --output DVI-0 --auto --output DVI-1 --auto --right-of DVI-0
+
+else
+xrandr --output DVI-0 --auto --output DVI-1 --auto --$1-of DVI-0
+
+fi
