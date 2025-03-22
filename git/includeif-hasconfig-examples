@@ -1,0 +1,29 @@
+# Examples of conditional config inclusion
+
+# includeIf with hasconfig not very well supported for an account under a domain
+#
+# [includeIf "hasconfig:remote.practicalli.url:git@github.com:practicalli/*.git"]
+# 		path = config-practicalli
+
+# ----------------------------------------
+# SSH Remote URI
+
+# Set config to be used with any repository hosted on GitHub
+# [includeIf "hasconfig:remote.*.url:ssh://git@github.com/**"]
+# 		path = config-github
+
+# Set config to use with any repository containing practicalli in its remote URL
+# [includeIf "hasconfig:remote.*.url:**/practicalli/**"]
+# 		path = config-practicalli
+
+# Set config to use with any repository in practicalli GitHub Org
+# [includeIf "hasconfig:remote.practicalli.url:git@github.com:practicalli/**"]
+# 		path = config-practicalli
+
+# TODO: Investigate what happens if there are two remotes,
+# each with their own IncludeIf match
+
+# Commercial work - by shared repository URL
+# [includeIf "gitdir:commercial-projects/company/"]
+# 		path = config-company
+# ----------------------------------------
