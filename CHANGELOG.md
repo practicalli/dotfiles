@@ -26,6 +26,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - git: includeif hasconfig conditional config inclusion examples
 - git: pre-commit hooks examples
 - ssh: example config with multiple keys & remote repl pem
+- dev: stale issue & pr scheduled check (monthly)
 
 ### Changed
 - git: restructure multiple configs, using relative include file paths
