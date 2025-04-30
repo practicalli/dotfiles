@@ -24,6 +24,7 @@ alias zsh-edit-last-command="fc -e astro -1"
 # ------------------------------------------
 #  Kitty Terminal
 alias ssh="kitty +kitten ssh"
-alias kitty-light="kitty +kitten themes Gruvbox Material Light Hard"
-alias kitty-dark="kitty +kitten themes Gruvbox Material Dark Hard"
+alias kitty-Catppuccin="kitty +kitten themes Catppuccin Mocha"
+# alias kitty-light="kitty +kitten themes Gruvbox Material Light Hard"
+# alias kitty-dark="kitty +kitten themes Gruvbox Material Dark Hard"
 # ------------------------------------------
