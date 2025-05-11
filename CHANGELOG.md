@@ -28,6 +28,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - ssh: example config with multiple keys & remote repl pem
 - dev: stale issue & pr scheduled check (monthly)
 - dev: `mkdocs-debug` make task for verbose output to debug issues
+- cli: sharship.rs cross-shell prompt with customised Catppuccin Mocka theme
 
 ### Changed
 - git: restructure multiple configs, using relative include file paths

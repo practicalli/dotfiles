@@ -8,6 +8,7 @@ Configuration files for tools such as Git, Clojure development tools.
 * clojure - [cljstyle](https://github.com/greglook/cljstyle) formatting rules
 * [kitty terminal](https://sw.kovidgoyal.net/kitty/) configuration - font, symbol mappings for nerdfonts, light and dark terminal colorschemes
 * `shell-aliases` common aliases used by all shells (bash, zsh)
+* [Starship](https://starship.rs/) cross-shell prompt config with a customised [Catppuccin Powerline theme](https://starship.rs/presets/catppuccin-powerline)
 
 
 ## Install
