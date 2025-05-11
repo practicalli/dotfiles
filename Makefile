@@ -21,12 +21,13 @@
 # -- Makefile task config -------------- #
 # .PHONY: ensures target used rather than matching file name
 # https://makefiletutorial.com/#phony
-.PHONY: all clean  deps dist docs lint pre-commit-check repl test test-ci test-watch
+.PHONY: all clean deps dist docs lint pre-commit-check repl test test-ci test-watch
 # -------------------------------------- #
 
 # -- Makefile Variables ---------------- #
 # run help if no target specified
 .DEFAULT_GOAL := help
+SHELL := /usr/bin/zsh
 
 # Column the target description is printed from
 HELP-DESCRIPTION-SPACING := 24
@@ -129,7 +130,7 @@ test-watch-all:  ## Run all tests when changes saved, regardless of failing test
 	$(CLOJURE_EXEC_TEST_RUNNER) :fail-fast? false :watch? true
 # -------------------------------------- #
 
-# -------- Build tasks --------------- #
+# -------- Build tasks ----------------- #
 build-config: ## Pretty print build configuration
 	$(info --------- View current build config ---------)
 	clojure -T:build/task config
@@ -151,9 +152,9 @@ build-uberjar-echo: ## Build a uberjar archive of Clojure project & Clojure runt
 build-clean: ## Clean build assets or given directory
 	$(info --------- Clean Build  ---------)
 	clojure -T:build/task clean
-# ------------------------------------ #
+# -------------------------------------- #
 
-# -- Code Quality -------------------- #
+# -- Code Quality ---------------------- #
 pre-commit-check: format-check lint test  ## Run format, lint and test targets
 
 format-check: ## Run cljstyle to check the formatting of Clojure code
