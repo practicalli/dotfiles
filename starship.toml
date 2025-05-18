@@ -20,9 +20,9 @@ $character"""
 
 right_format = """
 $cmd_duration\
-[](white)\
+[](lavender)\
 $time\
-[](fg:white bg:mauve )\
+[](fg:lavender bg:mauve )\
 $username\
 [](fg:mauve bg:mauve )\
 $os\
