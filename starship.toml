@@ -1,12 +1,9 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](peach)\
+[](mauve)\
 $directory\
-[](bg:yellow fg:peach)\
-$git_branch\
-$git_status\
-[](fg:yellow bg:green)\
+[](fg:mauve bg:lavender)\
 $c\
 $haskell\
 $java\
@@ -14,7 +11,10 @@ $kotlin\
 $nodejs\
 $python\
 $rust\
-[ ](fg:green)\
+[](fg:lavender bg:teal )\
+$git_branch\
+$git_status\
+[ ](fg:teal)\
 $line_break\
 $character"""
 
@@ -65,7 +65,7 @@ style_root = "bg:mauve fg:crust"
 format = '[ $user]($style)'
 
 [directory]
-style = "bg:peach fg:crust"
+style = "bg:mauve fg:crust"
 format = "[ $path ]($style)"
 truncation_length = 5
 truncation_symbol = "…/"
@@ -79,8 +79,8 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:yellow"
-format = '[[ $symbol $branch ](fg:crust bg:yellow)]($style)'
+style = "bg:teal"
+format = '[[ $symbol $branch ](fg:crust bg:teal)]($style)'
 
 [git_commit]
 commit_hash_length = 7
@@ -88,53 +88,53 @@ format = '[\($hash$tag\)]($style)'
 tag_symbol = '🔖 '
 
 [git_status]
-style = "bg:yellow"
-format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
+style = "bg:teal"
+format = '[[($all_status$ahead_behind )](fg:crust bg:teal)]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+style = "bg:lavender"
+format = '[[ $symbol( $version) ](fg:crust bg:lavender)]($style)'
 
 [c]
 symbol = " "
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+style = "bg:lavender"
+format = '[[ $symbol( $version) ](fg:crust bg:lavender)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+style = "bg:lavender"
+format = '[[ $symbol( $version) ](fg:crust bg:lavender)]($style)'
 
 [golang]
 symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+style = "bg:lavender"
+format = '[[ $symbol( $version) ](fg:crust bg:lavender)]($style)'
 
 [php]
 symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+style = "bg:lavender"
+format = '[[ $symbol( $version) ](fg:crust bg:lavender)]($style)'
 
 [java]
 symbol = " "
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+style = "bg:lavender"
+format = '[[ $symbol( $version) ](fg:crust bg:lavender)]($style)'
 
 [kotlin]
 symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+style = "bg:lavender"
+format = '[[ $symbol( $version) ](fg:crust bg:lavender)]($style)'
 
 [haskell]
 symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+style = "bg:lavender"
+format = '[[ $symbol( $version) ](fg:crust bg:lavender)]($style)'
 
 [python]
 symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:crust bg:green)]($style)'
+style = "bg:lavender"
+format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:crust bg:lavender)]($style)'
 
 [docker_context]
 symbol = ""
