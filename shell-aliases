@@ -12,6 +12,7 @@ alias lazyvim="NVIM_APPNAME=nvim-lazyvim nvim"
 
 # Neovide alias with AstroNvim configuration
 alias neovide="NVIM_APPNAME=nvim-astro5 neovide"
+alias neovide-kickstart="NVIM_APPNAME=nvim-kickstart neovide"
 # ------------------------------------------
 
 # ------------------------------------------
