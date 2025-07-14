@@ -4,7 +4,7 @@ Zsh is an advanced version of the Bash shell (Bourne Again Shell)
 
 Prezto is a comprehensive and efficient configuration for Zsh, with features added via modules
 
-Powerline10k is a highly configurable prompt theme (powerline) that provides context specific information on the command line, e.g. current git branch
+[Starship.rs](https://starship.rs/) is configured to run as the terminal prompt theme, using the `starship.toml` configuration.
 
 
 ## Prezto configuration
