@@ -33,6 +33,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - cli: sharship.rs cross-shell prompt with customised Catppuccin Mocka theme
 - hypr: add example key mappings
 - garuda: default hyprland configuration
+- garuda: dual monitor configuration for hyprland
 
 ### Changed
 - git: restructure multiple configs, using relative include file paths
