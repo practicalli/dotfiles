@@ -46,6 +46,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - dev: upgrade to megalinter version 8
 - kitty: nerdfonts bundled, symbol config redundant
 - zsh: prezto config format for readability
+- dev: updated GitHub action versions
+
+| :file                                          | :name            | :current | :latest |
+|------------------------------------------------|------------------|----------|---------|
+| .github/workflows/backstage-validator.yaml     | actions/checkout | v4       | v5      |
+| .github/workflows/changelog-check.yaml         | actions/checkout | v4       | v5      |
+| .github/workflows/megalinter.yaml              | actions/checkout | v4       | v5      |
+| .github/workflows/scheduled-version-check.yaml | actions/checkout | v4       | v5      |
+
 
 ## 2023-09-28
 ### Added
