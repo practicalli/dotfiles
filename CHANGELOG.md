@@ -34,6 +34,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - hypr: add example key mappings
 - garuda: default hyprland configuration
 - garuda: dual monitor configuration for hyprland
+- dev: `dependencies-update` & `dependencies-outdated` make tasks
 
 ### Changed
 - git: restructure multiple configs, using relative include file paths
