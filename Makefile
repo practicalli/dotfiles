@@ -1,4 +1,4 @@
-# ------------------------------------------
+# -------------------------------------- #
 # Practicalli Makefile
 #
 # Consistent set of targets to support local development of Clojure
@@ -16,7 +16,7 @@
 #   - `:build/task` to build this project into a jar or uberjar
 # - docker
 # - mega-linter-runner
-# ------------------------------------------
+# -------------------------------------- #
 
 # -- Makefile task config -------------- #
 # .PHONY: ensures target used rather than matching file name
@@ -27,10 +27,10 @@
 # -- Makefile Variables ---------------- #
 # run help if no target specified
 .DEFAULT_GOAL := help
-SHELL := /usr/bin/zsh
-
 # Column the target description is printed from
 HELP-DESCRIPTION-SPACING := 24
+
+SHELL := /usr/bin/zsh
 
 # Tool variables
 CLOJURE_TEST_RUNNER := clojure -M:test/env:test/run
@@ -43,15 +43,6 @@ OUTDATED_FILE := outdated-$(shell date +%y-%m-%d-%T).md
 
 # Makefile file and directory name wildcard
 # EDN-FILES := $(wildcard *.edn)
-# -------------------------------------- #
-
-# -- Help ------------------------------ #
-# Source: https://nedbatchelder.com/blog/201804/makefile_help_target.html
-
-help:  ## Describe available tasks in Makefile
-	@grep '^[a-zA-Z]' $(MAKEFILE_LIST) | \
-	sort | \
-	awk -F ':.*?## ' 'NF==2 {printf "\033[36m  %-$(HELP-DESCRIPTION-SPACING)s\033[0m %s\n", $$1, $$2}'
 # -------------------------------------- #
 
 # -- Clojure Projects ------------------ #
@@ -88,30 +79,29 @@ reloaded:  ## Run Clojure REPL with rich terminal UI (Rebel Readline)
 	clojure -M:repl/reloaded
 
 deps: deps.edn  ## Prepare dependencies for test and dist targets
-	$(info -- Download test and service libraries ---------------)
+	$(info -- Download test and service libraries ---)
 	clojure -P -M:test/run && clojure -P -T:build/task
 
 dist: build-uberjar ## Build and package Clojure service
-	$(info -- Build and Package Clojure service ----------------)
-
+	$(info -- Build and Package Clojure service -----)
 
 clean:  ## Clean Clojure tooling temporary files
 	$(info -- Clean Clojure temporary files ---------)
 	- rm -rf ./.cpcache ./.clj-kondo/cache ./.lsp
 
-run:  ## Run Service using clojure.main 
-	$(info --------- Download test and service libraries ---------)
+run:  ## Run Service using clojure.main
+	$(info -- Download test and service libraries ---)
 	clojure -M:run/service
 # -------------------------------------- #
 
 # -- Testing --------------------------- #
 test-config:  ## Print Kaocha test runner configuration
-		$(info -- Runner Configuration ----------------)
-		$(CLOJURE_TEST_RUNNER) --print-config
+	$(info -- Runner Configuration ------------------)
+	$(CLOJURE_TEST_RUNNER) --print-config
 
 test-profile:  ## Profile unit test speed, showing 3 slowest tests
-		$(info -- Runner Profile Tests ----------------)
-		$(CLOJURE_TEST_RUNNER) --plugin  kaocha.plugin/profiling
+	$(info -- Runner Profile Tests ------------------)
+	$(CLOJURE_TEST_RUNNER) --plugin  kaocha.plugin/profiling
 
 test:  ## Run unit tests - stoping on first error
 	$(info -- Runner for unit tests -----------------)
@@ -130,17 +120,17 @@ test-watch-all:  ## Run all tests when changes saved, regardless of failing test
 	$(CLOJURE_EXEC_TEST_RUNNER) :fail-fast? false :watch? true
 # -------------------------------------- #
 
-# -------- Build tasks ----------------- #
+# -- Build tasks ----------------------- #
 build-config: ## Pretty print build configuration
-	$(info --------- View current build config ---------)
+	$(info -- View current build config -------------)
 	clojure -T:build/task config
 
 build-jar: ## Build a jar archive of Clojure project
-	$(info --------- Build library jar ---------)
+	$(info -- Build library jar ---------------------)
 	clojure -T:build/task jar
 
 build-uberjar: ## Build a uberjar archive of Clojure project & Clojure runtime
-	$(info --------- Build service Uberjar  ---------)
+	$(info -- Build service Uberjar  ----------------)
 	clojure -T:build/task uberjar
 
 build-uberjar-echo: ## Build a uberjar archive of Clojure project & Clojure runtime
@@ -150,7 +140,7 @@ build-uberjar-echo: ## Build a uberjar archive of Clojure project & Clojure runt
 	clojure -T:build/task uberjar
 
 build-clean: ## Clean build assets or given directory
-	$(info --------- Clean Build  ---------)
+	$(info -- Clean Build  --------------------------)
 	clojure -T:build/task clean
 # -------------------------------------- #
 
@@ -190,6 +180,32 @@ dependencies-update: ## Update all library dependencies and GitHub action
 	- clojure -T:update/dependency-versions > $(OUTDATED_FILE)
 # -------------------------------------- #
 
+# --- Documentation Generation  -------- #
+python-venv:  ## Create Python Virtual Environment
+	$(info -- Create Python Virtual Environment -----)
+	python3 -m venv ~/.local/venv
+
+mkdocs-install:
+	$(info -- Install Material for MkDocs -----------)
+	source ~/.local/venv/bin/activate && pip install mkdocs-material mkdocs-callouts mkdocs-glightbox mkdocs-git-revision-date-localized-plugin mkdocs-redirects mkdocs-rss-plugin pillow cairosvg --upgrade
+
+docs: ## Build and run mkdocs in local server (python venv)
+	$(info -- MkDocs Local Server -------------------)
+	source ~/.local/venv/bin/activate && $(MKDOCS_SERVER)
+
+docs-changed:  ## Build only changed files and run mkdocs in local server (python venv)
+	$(info -- Mkdocs Local Server -------------------)
+	source ~/.local/venv/bin/activate && $(MKDOCS_SERVER) --dirtyreload
+
+docs-build:  ## Build mkdocs (python venv)
+	$(info -- Mkdocs Build Website ------------------)
+	source ~/.local/venv/bin/activate && mkdocs build
+
+docs-debug:  ## Run mkdocs local server in debug mode (python venv)
+	$(info -- Mkdocs Local Server Debug -------------)
+	. ~/.local/venv/bin/activate; $(MKDOCS_SERVER) -v
+# -------------------------------------- #
+
 # ------- Version Control -------------- #
 git-sr:  ## status list of git repos under current directory
 	$(info -- Multiple Git Repo Status --------------)
@@ -199,34 +215,6 @@ git-status:  ## status details of git repos under current directory
 	$(info -- Multiple Git Status -------------------)
 	mgitstatus
 # -------------------------------------- #
-
-# --- Documentation Generation  -------- #
-
-python-venv:
-	$(info -- Create Python Virtual Environment -----)
-	python3 -m venv ~/.local/venv
-
-mkdocs-install:
-	$(info -- Install Material for MkDocs -----------)
-	. ~/.local/venv/bin/activate; pip install mkdocs-material mkdocs-callouts mkdocs-glightbox mkdocs-git-revision-date-localized-plugin mkdocs-redirects mkdocs-rss-plugin pillow cairosvg --upgrade
-
-docs: ## Build and run mkdocs in local server (python venv)
-	$(info -- MkDocs Local Server -------------------)
-	. ~/.local/venv/bin/activate; $(MKDOCS_SERVER)
-
-docs-changed:  ## Build only changed files and run mkdocs in local server (python venv)
-	$(info -- Mkdocs Local Server -------------------)
-	. ~/.local/venv/bin/activate; $(MKDOCS_SERVER) --dirtyreload
-
-docs-build:  ## Build mkdocs (python venv)
-	$(info -- Mkdocs Local Server -------------------)
-	. ~/.local/venv/bin/activate; mkdocs build
-
-docs-debug:  ## Build only changed files and run mkdocs in local server (python venv)
-	$(info -- Mkdocs Local Server Debug -------------)
-	. ~/.local/venv/bin/activate; $(MKDOCS_SERVER) -v
-# -------------------------------------- #
-
 # -- Docker Containers ----------------- #
 docker-build:  ## Build Clojure project and run with docker compose
 	$(info -- Docker Compose Build ------------------)
@@ -280,4 +268,13 @@ test-ci: deps  ## Test runner for integration tests
 # `make all` used in Docker builder stage
 .DELETE_ON_ERROR:
 all: test-ci dist clean  ## Call test-ci dist and clean targets, used for CI
+# -------------------------------------- #
+
+# ------------ Help -------------------- #
+# Source: https://nedbatchelder.com/blog/201804/makefile_help_target.html
+
+help:  ## Describe available tasks in Makefile
+	@grep '^[a-zA-Z]' $(MAKEFILE_LIST) | \
+	sort | \
+	awk -F ':.*?## ' 'NF==2 {printf "\033[36m  %-$(HELP-DESCRIPTION-SPACING)s\033[0m %s\n", $$1, $$2}'
 # -------------------------------------- #
