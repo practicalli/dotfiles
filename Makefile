@@ -92,6 +92,10 @@ clean:  ## Clean Clojure tooling temporary files
 run:  ## Run Service using clojure.main
 	$(info -- Download test and service libraries ---)
 	clojure -M:run/service
+
+outdated: ## Check deps.edn & GitHub actions for new versions
+	$(info -- Search for outdated libraries ---------)
+	- clojure -T:search/outdated > $(OUTDATED_FILE)
 # -------------------------------------- #
 
 # -- Testing --------------------------- #
