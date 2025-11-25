@@ -189,6 +189,10 @@ python-venv:  ## Create Python Virtual Environment
 	$(info -- Create Python Virtual Environment -----)
 	python3 -m venv ~/.local/venv
 
+python-activate:  ## Activate Python Virtual Environment for MkDocs
+	$(info -- Mkdocs Local Server ----------------)
+	source ~/.local/venv/bin/activate
+
 mkdocs-install:
 	$(info -- Install Material for MkDocs -----------)
 	source ~/.local/venv/bin/activate && pip install mkdocs-material mkdocs-callouts mkdocs-glightbox mkdocs-git-revision-date-localized-plugin mkdocs-redirects mkdocs-rss-plugin pillow cairosvg --upgrade
