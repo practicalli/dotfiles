@@ -212,6 +212,10 @@ docs-build:  ## Build mkdocs (python venv)
 docs-debug:  ## Run mkdocs local server in debug mode (python venv)
 	$(info -- Mkdocs Local Server Debug -------------)
 	. ~/.local/venv/bin/activate; $(MKDOCS_SERVER) -v
+
+docs-staging:  ## Deploy to staging repository
+	$(info -- Mkdocs Staging Deploy ---------------)
+	source ~/.local/venv/bin/activate && mkdocs gh-deploy --force --no-history --config-file mkdocs-staging.yml
 # -------------------------------------- #
 
 # ------- Version Control -------------- #
