@@ -56,3 +56,8 @@ nvim-fuzy-find() {
 
 # Starship command prompt theme
 eval "$(starship init zsh)"
+
+# uv python package manager install
+. "$HOME/.local/share/../bin/env"
+# uv tab completion for zsh
+eval "$(uv generate-shell-completion zsh)"
