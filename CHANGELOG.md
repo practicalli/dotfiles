@@ -35,6 +35,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - garuda: default hyprland configuration
 - garuda: dual monitor configuration for hyprland
 - dev: `dependencies-update` & `dependencies-outdated` make tasks
+- debian: preferred packages install and purge script
 
 ### Changed
 - git: restructure multiple configs, using relative include file paths
