@@ -37,6 +37,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - dev: `dependencies-update` & `dependencies-outdated` make tasks
 - debian: preferred packages install and purge script
 - debian: 1 day system log rotation
+- debian: 1password install via package manager
 
 ### Changed
 - git: restructure multiple configs, using relative include file paths
