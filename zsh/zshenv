@@ -14,6 +14,12 @@ export XDG_CACHE_HOME="${XDG_CACHE_HOME:=$HOME/.cache}"
 export ZDOTDIR="${ZDOTDIR:=$XDG_CONFIG_HOME/zsh}"
 # ----------------------------------------
 
+# ----------------------------------------
+# Add locally installed binaries to execution path
+if [[ -d $HOME/.local/bin/ ]]; then
+  path=($HOME/.local/bin(/N) $path)
+fi
+# ----------------------------------------
 
 # ----------------------------------------
 # Ensure that a non-login, non-interactive shell has a defined environment.
