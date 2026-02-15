@@ -29,6 +29,8 @@ echo ""
 
 echo "# ---------------------------------------"
 echo "install neovim"
+# remove the existing nvim binary as DRA fails to override the file
+rm -f /usr/local/bin/nvim
 dra download --automatic --install --output /usr/local/bin/ neovim/neovim
 echo "# ---------------------------------------"
 
