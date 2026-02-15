@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # -----------------------------------------------
 # Practicalli Configuration for development environment
 
@@ -36,6 +38,19 @@
 # echo "# ---------------------------------------"
 # echo "Configure Zsh"
 # echo "# ---------------------------------------"
+
+# Terminal Prompt
+
+# https://github.com/starship/starship
+
+# echo "# ---------------------------------------"
+# echo "Starship Terminal Prompt"
+dra download -s starship-x86_64-unknown-linux-gnu.tar.gz -i -o ~/.local/bin starship/starship
+
+starship completions bash > ~/.local/share/bash-completion/completions/starship
+starship completions zsh > ~/.local/share/zsh-completion/_starship
+# echo "# ---------------------------------------"
+
 
 # echo "# ---------------------------------------"
 # echo "Install Clojure CLI Configuration"
