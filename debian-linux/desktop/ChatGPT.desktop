@@ -1,0 +1,9 @@
+[Desktop Entry]
+Comment=ChatGPT
+Exec=xdg-open --kiosk https://chatgpt.com/
+Icon=/home/practicalli/.local/share/applications/icons/ChatGPT.png
+Name=ChatGPT
+StartupNotify=true
+Terminal=false
+Type=Application
+Version=1.0

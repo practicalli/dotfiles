@@ -1,0 +1,10 @@
+[Desktop Entry]
+Comment=OpenJDK Java 25 Runtime
+Exec=/usr/lib/jvm/java-25-openjdk/bin/java -jar
+Icon=java25-openjdk
+Keywords=java;runtime
+MimeType=application/x-java-archive;application/java-archive;application/x-jar;
+Name=OpenJDK Java 25 Runtime
+NoDisplay=true
+Terminal=false
+Type=Application

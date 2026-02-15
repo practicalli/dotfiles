@@ -1,0 +1,9 @@
+[Desktop Entry]
+Comment=WhatsApp
+Exec=xdg-open --kiosk https://web.whatsapp.com/
+Icon=/home/practicalli/.local/share/applications/icons/WhatsApp.png
+Name=WhatsApp
+StartupNotify=true
+Terminal=false
+Type=Application
+Version=1.0

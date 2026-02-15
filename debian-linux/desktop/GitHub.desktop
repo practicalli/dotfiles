@@ -1,0 +1,9 @@
+[Desktop Entry]
+Comment=GitHub
+Exec=xdg-open --kiosk https://github.com/
+Icon=/home/practicalli/.local/share/applications/icons/GitHub.png
+Name=GitHub
+StartupNotify=true
+Terminal=false
+Type=Application
+Version=1.0

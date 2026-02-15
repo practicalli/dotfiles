@@ -1,0 +1,9 @@
+[Desktop Entry]
+Comment=Docker
+Exec=xdg-terminal-exec --app-id=TUI.tile -e lazydocker
+Icon=/home/practicalli/.local/share/applications/icons/Docker.png
+Name=Docker
+StartupNotify=true
+Terminal=false
+Type=Application
+Version=1.0

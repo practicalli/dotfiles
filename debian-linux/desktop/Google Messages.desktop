@@ -1,0 +1,9 @@
+[Desktop Entry]
+Comment=Google Messages
+Exec=xdg-open --kiosk https://messages.google.com/web/conversations
+Icon=/home/practicalli/.local/share/applications/icons/Google Messages.png
+Name=Google Messages
+StartupNotify=true
+Terminal=false
+Type=Application
+Version=1.0

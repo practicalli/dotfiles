@@ -1,0 +1,13 @@
+[Desktop Entry]
+Categories=System;TerminalEmulator;
+Comment=Open URLs with kitty
+Exec=kitty +open %U
+GenericName=Terminal emulator
+Icon=kitty
+MimeType=image/*;application/x-sh;application/x-shellscript;inode/directory;text/*;x-scheme-handler/kitty;x-scheme-handler/ssh;
+Name=kitty URL Launcher
+NoDisplay=true
+StartupNotify=true
+TryExec=kitty
+Type=Application
+Version=1.0

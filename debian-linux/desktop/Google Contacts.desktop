@@ -1,0 +1,9 @@
+[Desktop Entry]
+Comment=Google Contacts
+Exec=xdg-open --kiosk https://contacts.google.com/
+Icon=/home/practicalli/.local/share/applications/icons/Google Contacts.png
+Name=Google Contacts
+StartupNotify=true
+Terminal=false
+Type=Application
+Version=1.0

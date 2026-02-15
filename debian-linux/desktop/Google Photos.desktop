@@ -1,0 +1,9 @@
+[Desktop Entry]
+Comment=Google Photos
+Exec=xdg-open --kiosk https://photos.google.com/
+Icon=/home/practicalli/.local/share/applications/icons/Google Photos.png
+Name=Google Photos
+StartupNotify=true
+Terminal=false
+Type=Application
+Version=1.0

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Comment=YouTube
+Exec=xdg-open --kiosk https://youtube.com/
+Icon=/home/practicalli/.local/share/applications/icons/YouTube.png
+Name=YouTube
+StartupNotify=true
+Terminal=false
+Type=Application
+Version=1.0

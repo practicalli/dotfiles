@@ -1,0 +1,9 @@
+[Desktop Entry]
+Comment=Discord
+Exec=xdg-open --kiosk https://discord.com/channels/@me
+Icon=/home/practicalli/.local/share/applications/icons/Discord.png
+Name=Discord
+StartupNotify=true
+Terminal=false
+Type=Application
+Version=1.0

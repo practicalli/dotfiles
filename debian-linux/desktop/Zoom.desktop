@@ -1,0 +1,10 @@
+[Desktop Entry]
+Comment=Zoom
+Exec=xdg-open --kiosk %u
+Icon=/home/practicalli/.local/share/applications/icons/Zoom.png
+MimeType=x-scheme-handler/zoommtg;x-scheme-handler/zoomus
+Name=Zoom
+StartupNotify=true
+Terminal=false
+Type=Application
+Version=1.0
