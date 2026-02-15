@@ -44,6 +44,11 @@ else
   path=($path)
 fi
 
+## Rust local binaries
+if [[ -d $HOME/.cargo/bin ]]; then
+  path=($HOME/.cargo/bin(/N) $path)
+fi
+
 # Zulip events - command line authentication
 # https://gitlab.com/clojurians-zulip/feeds/-/blob/master/README.md#announce-an-event
 export ZULIP_AUTH='****@************:********************************'
