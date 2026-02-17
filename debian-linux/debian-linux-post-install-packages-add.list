@@ -1,6 +1,7 @@
 audacity
 blender
 curl
+chromium
 default-jdk
 emacs
 exfalso
@@ -14,9 +15,11 @@ geeqie
 gimp
 handbrake
 inkscape
+jq
 kitty
 lightdm
 luarocks
+make
 meld
 nodejs
 obs-studio
