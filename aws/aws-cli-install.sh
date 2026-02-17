@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip -u awscliv2.zip
+./aws/install --install-dir ~/.local/share/aws --bin-dir ~/.local/bin --update
+rm -rf awscliv2.zip aws/
+
+# Shell completions
+
+cat > ~/.local/share/bash-completion/completions/aws <<'EOL'
+#!/usr/bin/env bash
+complete -C ~/.local/bin/aws_completer aws
+EOL
+
+# NOTE: zsh completion is in .zshrc otherwise it doesn't work
