@@ -58,6 +58,6 @@ nvim-fuzy-find() {
 eval "$(starship init zsh)"
 
 # uv python package manager install
-. "$HOME/.local/share/../bin/env"
+# . "$HOME/.local/share/../bin/env"
 # uv tab completion for zsh
 eval "$(uv generate-shell-completion zsh)"
