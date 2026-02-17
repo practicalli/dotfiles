@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+if ! command -v mise >/dev/null; then
+  echo "mise is required to run this script"
+  exit 1
+fi
+
+DEFAULT_VERSION=node@22
+
+mise install node@20 "$DEFAULT_VERSION" node@24
+
+# Default version
+mise use -g "$DEFAULT_VERSION"
+
+# Activate node corepack
+mise exec node@20 -- corepack enable
+mise exec "$DEFAULT_VERSION" -- corepack enable
+mise exec node@24 -- corepack enable
+
+# Sometimes after running corepack enable the shims are not updated
+mise reshim
+
+# Shell completions
+mise exec "$DEFAULT_VERSION" -- npm completion >~/.local/share/bash-completion/completions/npm
+
+# NOTE: this is a snippet from `npm completion` output but works fine even with `bashcompinit` in .zshrc
+cat >~/.local/share/zsh-completion/_npm <<'EOL'
+#compdef npm
+
+_npm() {
+  local si=$IFS
+  compadd -- $(COMP_CWORD=$((CURRENT-1)) \
+                COMP_LINE=$BUFFER \
+                COMP_POINT=0 \
+                npm completion -- "${words[@]}" \
+                2>/dev/null)
+  IFS=$si
+}
+
+if [ "$funcstack[1]" = "_npm" ]; then
+    _npm "$@"
+else
+    compdef _npm npm
+fi
+EOL
+
+curl -o ~/.local/share/bash-completion/completions/yarn https://raw.githubusercontent.com/dsifford/yarn-completion/master/yarn-completion.bash
+curl -o ~/.local/share/zsh-completion/_yarn https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/yarn/_yarn
+
+mise exec "$DEFAULT_VERSION" -- pnpm completion bash >~/.local/share/bash-completion/completions/pnpm
+mise exec "$DEFAULT_VERSION" -- pnpm completion zsh >~/.local/share/zsh-completion/_pnpm
