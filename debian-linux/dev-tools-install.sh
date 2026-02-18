@@ -9,6 +9,15 @@
 
 installpath="~/.local/bin/"
 
+# Ensure install path exists
+mkdir -p ~/.local/bin
+
+export PATH=$HOME/.local/bin:$PATH
+
+# Ensure shared completion directories exist
+mkdir -p ~/.local/share/bash-completion/completions
+mkdir -p ~/.local/share/zsh-completion/completions
+
 # -----------------------------------------------
 # Install Developer tools
 
@@ -23,7 +32,7 @@ echo ""
 
 echo "# ---------------------------------------"
 echo "DRA - Download Release Assests from GitHub - installed in " $installpath
-curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/devmatteini/dra/refs/heads/main/install.sh | bash -s -- --to $installpath
+curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/devmatteini/dra/refs/heads/main/install.sh | sudo bash -s -- --to /usr/local/bin
 
 # Generate shell command completion
 dra completion bash > ~/.local/share/bash-completion/completions/dra
@@ -35,8 +44,8 @@ echo ""
 echo "# ---------------------------------------"
 echo "Neovim hyper-configurable editor - installed for all users in `/usr/local/bin`"
 # remove the existing nvim binary as DRA fails to override the file
-sudo rm -f /usr/local/bin/nvim
-sudo dra download --automatic --install --output /usr/local/bin/ neovim/neovim
+# sudo rm -f /usr/local/bin/nvim
+sudo dra download --automatic --install --output /usr/local/bin neovim/neovim
 echo "# ---------------------------------------"
 
 echo ""
@@ -117,16 +126,18 @@ echo "# ---------------------------------------"
 echo ""
 
 echo "# ---------------------------------------"
+# Cannot find asset that matches your system linux x86_64
 echo "HTTPie CLI - HTTP Client - installed in " $installpath
-dra download --automatic --install --output ~/.local/bin/ httpie/cli
+# dra download --automatic --install --output ~/.local/bin/ httpie/cli
 echo "# ---------------------------------------"
 
 echo ""
 
 echo "# ---------------------------------------"
+# Cannot find asset that matches your system linux x86_64
 echo "HTTPie Desktop - HTTP Client - installed in " $installpath
 # TODO: may need to run via https://github.com/TheAssassin/AppImageLauncher/wiki
-dra download --automatic --install --output ~/.local/bin/ httpie/desktop
+# dra download --automatic --install --output ~/.local/bin/ httpie/desktop
 echo "# ---------------------------------------"
 
 echo ""
@@ -146,7 +157,7 @@ echo ""
 echo "# ---------------------------------------"
 echo "Shellcheck - shell script static analysis tool - installed in " $installpath
 # INFO: Debian Linux currently 0.10.0
-dra download --automatic --install --output ~/.local/bin/koalaman/shellcheck
+dra download --automatic --install --output ~/.local/bin/ koalaman/shellcheck
 echo "# ---------------------------------------"
 
 echo ""
