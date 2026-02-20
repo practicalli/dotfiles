@@ -7,6 +7,7 @@ echo "# ---------------------------------------"
 echo "Nodejs install via Node Version Manager - FNM"
 
 # Download and install fnm:
+# https://github.com/Schniz/fnm
 curl -o- https://fnm.vercel.app/install | bash
 
 # prevent duplication in your shell config file, pass --skip-shell to the install command:
