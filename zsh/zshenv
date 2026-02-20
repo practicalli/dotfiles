@@ -38,11 +38,11 @@ export SPACEMACSDIR=$XDG_CONFIG_HOME/spacemacs
 
 ## Nodejs local install
 ## unsure if an else branch is needed here...
-if [[ -d $HOME/.apps/nodejs/current ]]; then
-  path=($HOME/.apps/nodejs/current/bin(/N) $path)
-else
-  path=($path)
-fi
+# if [[ -d $HOME/.apps/nodejs/current ]]; then
+#   path=($HOME/.apps/nodejs/current/bin(/N) $path)
+# else
+#   path=($path)
+# fi
 
 ## Rust local binaries
 if [[ -d $HOME/.cargo/bin ]]; then

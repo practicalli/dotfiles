@@ -11,7 +11,13 @@ echo "Nodejs install via Node Version Manager - NVM"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 
 # Source the NVM script
-\. "$HOME/.nvm/nvm.sh"
+if [ -d $XDG_CONFIG_HOME/nvm ]; then
+ echo "Source NVM script from XDG_CONFIG_HOME/nvim"
+ \. "$XDG_CONFIG_HOME/nvm/nvm.sh"
+else
+ echo "Source NVM script from HOME/.nvim"
+ \. "$HOME/.nvm/nvm.sh"
+fi
 
 # Install the given version of nodejs
 nvm install 24
