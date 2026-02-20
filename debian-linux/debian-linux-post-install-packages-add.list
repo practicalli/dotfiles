@@ -1,7 +1,7 @@
 audacity
 blender
-curl
 chromium
+curl
 default-jdk
 emacs
 exfalso
@@ -30,9 +30,11 @@ ranger
 ripgrep
 simplescreenrecorder
 tree
+unzip
 visualvm
 vlc
 wget
 xclip
 xclip
+zip
 zsh
