@@ -15,8 +15,8 @@ curl -o- https://fnm.vercel.app/install | bash
 
 # Define location of FNM
 if [ -d $XDG_CONFIG_HOME/fnm ]; then
- echo "Source FNM script from XDG_CONFIG_HOME/fnm"
- FNM_PATH="$XDG_CONFIG_HOME/fnm"
+ echo "Source FNM script from XDG_DATA_HOME/fnm"
+ FNM_PATH="$XDG_DATA_HOME/fnm"
 else
  echo "Source NVM script from HOME/.local/share/fnm"
  FNM_PATH="$HOME/.local/share/fnm"
