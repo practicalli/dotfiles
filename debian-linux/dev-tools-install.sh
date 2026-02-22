@@ -169,6 +169,18 @@ echo "# ---------------------------------------"
 echo ""
 
 
+#
+
+echo "# ---------------------------------------"
+echo "Static Site Generators"
+
+./cli/material-for-mkdocs.sh
+
+./cli/zensical.sh
+echo "# ---------------------------------------"
+
+echo ""
+
 
 # Claude.ai
 #set -euo pipefail
