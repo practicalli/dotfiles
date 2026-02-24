@@ -94,6 +94,8 @@ echo
 echo "# ---------------------------------------"
 echo "Programming Languages"
 
+./language/clojure.sh
+./language/clojure-lsp.sh
 ./language/nodejs-fvm-install-nodejs.sh
 # ./language/nodejs-nvm-install-node24.sh
 ./language/rust-rustup-install.sh
