@@ -12,13 +12,12 @@ curl -SsL https://packages.httpie.io/deb/KEY.gpg | sudo gpg --dearmor -o /usr/sh
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/httpie.gpg] https://packages.httpie.io/deb ./" | sudo tee /etc/apt/sources.list.d/httpie.list > /dev/null
 echo
 
-echo
 echo "Install Discord package"
 sudo apt update && sudo apt install httpie
 echo
 
-echo
 echo "HTTPie App now available via desktop launcher and command line:"
-which httpie
+echo "HTTPie CLI installed at: $(which httpie)"
+echo "HTTPie CLI version: $(httpie --version)"
 echo "# ---------------------------------------"
 echo
