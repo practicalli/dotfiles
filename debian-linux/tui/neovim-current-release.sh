@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 
-echo ""
+# Install the current release version of Neovim from GitHub for all users
 
 echo "# ---------------------------------------"
 echo "Neovim hyper-configurable editor - installed for all users in `/usr/local/bin`"
-# remove the existing nvim binary as DRA fails to override the file
-# sudo rm -f /usr/local/bin/nvim
 
 # install the nvim.appimage (automatic only installs nvim and not runtime)
+# rename file to `nvim` the standard executable name
 sudo dra download --select nvim-linux-x86_64.appimage --install --output /usr/local/bin/nvim neovim/neovim
-echo "# ---------------------------------------"
 
+echo "# ---------------------------------------"
 echo ""

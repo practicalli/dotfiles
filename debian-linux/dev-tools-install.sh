@@ -46,6 +46,8 @@ echo "TUIs"
 
 ./tui/caligula.sh
 ./tui/lychee.sh
+./tui/neovim-current-release.sh
+./tui/neovim-pre-release.sh
 ./tui/nvtop.sh
 ./tui/shellcheck.sh
 
@@ -61,7 +63,6 @@ echo "Command Line tools"
 # ./cli/httpie-uv-tool.sh
 ./cli/just.sh
 ./cli/miniserve.sh
-./cli/neovim.sh
 ./cli/ripgrep.sh
 
 echo "# ---------------------------------------"
