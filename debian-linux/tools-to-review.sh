@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # TODO: Review which of these tools are useful
 # some may already be part of Debain Linux packages
 # and on the latest version
@@ -25,9 +27,9 @@ fd --gen-completions zsh > ~/.local/share/zsh-completion/_fd
 # fzf --version
 # 0.60 (devel)
 
- [ ! -d ~/.fzf ] && git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf || git -C ~/.fzf pull
+ # [ ! -d ~/.fzf ] && git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf || git -C ~/.fzf pull
 
-~/.fzf/install --no-key-bindings --completion --no-update-rc
+# ~/.fzf/install --no-key-bindings --completion --no-update-rc
 # -----------------------------------------------
 
 
@@ -80,6 +82,6 @@ dra download -i -s phs.zip -o ~/.local/bin astral-sh/ruff
 
 
 # -----------------------------------------------
-https://code.visualstudio.com/
+# https://code.visualstudio.com/
 
 # -----------------------------------------------
