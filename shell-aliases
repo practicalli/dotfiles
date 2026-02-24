@@ -3,8 +3,7 @@
 # ------------------------------------------
 # Neovim Aliases for multiple configurations
 alias astro="NVIM_APPNAME=nvim-astro5 nvim"
-alias astro4="NVIM_APPNAME=nvim-astro nvim10"
-alias astro11="NVIM_APPNAME=nvim-astro nvim"
+alias astro6="NVIM_APPNAME=nvim-astro6 nvim-nightly"
 alias astrotemplate="NVIM_APPNAME=nvim-astronvim-template nvim"
 alias cajus="NVIM_APPNAME=nvim-cajus nvim"
 alias kickstart="NVIM_APPNAME=nvim-kickstart-nvim nvim"
