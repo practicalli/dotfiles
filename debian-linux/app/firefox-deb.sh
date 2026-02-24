@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# WARNING: Not tested yet - not required on Debian Linux, only Ubuntu
+
 # INFO: Install firefox as .deb package from mozilla ppa, replacing ubuntu snap version
 # Source:
 # - https://support.mozilla.org/en-US/kb/install-firefox-linux#w_install-firefox-deb-package-for-debian-based-distributions-recommended
