@@ -19,7 +19,7 @@ if [[ $SHELL == "/bin/bash" ]]; then
   rustup completions bash rustup > "$BASH_COMPLETION_DIR"/rustup
   rustup completions bash cargo > "$BASH_COMPLETION_DIR"/cargo
 
-if [[ $SHELL == "/usr/bin/zsh" ]]; then
+elif [[ $SHELL == "/usr/bin/zsh" ]]; then
   mkdir -p ~/.local/share/zsh-completion
   ZSH_COMPLETION_DIR="$HOME/.local/share/zsh-completion"
   rustup completions zsh rustup > "$ZSH_COMPLETION_DIR"/_rustup

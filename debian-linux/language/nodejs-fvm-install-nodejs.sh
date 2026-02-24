@@ -15,7 +15,7 @@ curl -o- https://fnm.vercel.app/install | bash
 # curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
 
 # Define location of FNM
-if [ -d $XDG_CONFIG_HOME/fnm ]; then
+if [ -d "$XDG_CONFIG_HOME"/fnm ]; then
  echo "Source FNM script from XDG_DATA_HOME/fnm"
  FNM_PATH="$XDG_DATA_HOME/fnm"
 else
@@ -26,16 +26,17 @@ fi
 # Source the FNM script
 if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
-  eval "`fnm env`"
+  # eval "`fnm env`"  # shellcheck reports bad form
+  eval "$(fnm env)"
 fi
 
 # Download and install Node.js:
 fnm install 24
 
 # Verify the Node.js version:
-node -v # Should print "v24.13.1".
+echo "Node.js version: $(node -v)"
 
 # Verify npm version:
-npm -v # Should print "11.8.0".
+echo "NPM version: $(npm -v)"
 echo "# ---------------------------------------"
 echo
