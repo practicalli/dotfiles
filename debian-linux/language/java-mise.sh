@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# WARNING: Script not recommended. Use Apt package manager to install Java
+
 if ! command -v mise > /dev/null; then
   echo "mise is required to run this script"
   exit 1

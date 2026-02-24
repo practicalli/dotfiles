@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-echo ""
-
+echo
 echo "# ---------------------------------------"
 echo "Just - task automation - installed in " $installpath
 dra download --automatic --install --output ~/.local/bin/ casey/just
@@ -14,9 +13,8 @@ if [[ $SHELL == "/usr/bin/zsh" ]]; then
   mkdir -p ~/.local/share/zsh-completion
   just --completions zsh > ~/.local/share/zsh-completion/_just
 else
-    echo "Unknown SHELL, Ripgrep completions will not be generated"
-    exit 1
+  echo "Unknown SHELL, Ripgrep completions will not be generated"
+  exit
 fi
 echo "# ---------------------------------------"
-
-echo ""
+echo

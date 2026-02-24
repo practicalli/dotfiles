@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# WARNING: Script not recommended. Use fvm to install Node
+
+echo
 if ! command -v mise >/dev/null; then
   echo "mise is required to run this script"
   exit 1

@@ -3,6 +3,7 @@
 # NOTE: run this script after setting up preferred shell, e.g. zsh
 # as the NVM script adds itself to the shell resource configuration
 
+echo
 echo "# ---------------------------------------"
 echo "Nodejs install via Node Version Manager - FNM"
 
@@ -37,3 +38,4 @@ node -v # Should print "v24.13.1".
 # Verify npm version:
 npm -v # Should print "11.8.0".
 echo "# ---------------------------------------"
+echo

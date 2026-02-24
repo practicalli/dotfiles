@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+echo
 echo "# ---------------------------------------"
 echo "Ripgrep - line oriented search tool - installed in " $installpath
 # INFO: Debian Linux currently 14.1.1
@@ -15,8 +16,7 @@ if [[ $SHELL == "/usr/bin/zsh" ]]; then
   rg --generate complete-zsh > ~/.local/share/zsh-completion/_rg
 else
     echo "Unknown SHELL, Ripgrep completions will not be generated"
-    exit 1
+    exit
 fi
 echo "# ---------------------------------------"
-
-echo ""
+echo

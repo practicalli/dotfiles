@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# INFO: Practicalli uses FVM to install Node.js
+
 # NOTE: run this script after setting up preferred shell, e.g. zsh
 # and XDG environment variables are defined
 # as the NVM script adds itself to the shell resource configuration

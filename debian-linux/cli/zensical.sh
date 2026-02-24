@@ -10,11 +10,9 @@ then
  exit
 fi
 
-echo ""
-
+echo
 echo "# ---------------------------------------"
 echo "Install Zensical - updates if already installed"
 uv tool install zensical --upgrade
 echo "# ---------------------------------------"
-
-echo ""
+echo

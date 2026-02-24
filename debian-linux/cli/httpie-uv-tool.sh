@@ -6,19 +6,17 @@
 
 if [ "$(whoami)" = "root" ]
 then
- echo "Run the uv tool install script with your user account. Do not run as root or via sudo"
- exit
+  echo "Run the uv tool install script with your user account. Do not run as root or via sudo"
+  exit
 fi
 
-echo ""
-
+echo
 echo "# ---------------------------------------"
 echo "HTTP Client - installed as Uv Tool"
 
 uv tool install --with wheel httpie --upgrade
 echo "# ---------------------------------------"
-
-echo ""
+echo
 
 
 

@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-echo ""
-
+echo
 echo "# ---------------------------------------"
 echo "Miniserve - serve websites  on the command line - installed in " $installpath
 dra download --automatic --install --output ~/.local/bin/ svenstaro/miniserve
@@ -15,8 +14,7 @@ if [[ $SHELL == "/usr/bin/zsh" ]]; then
   miniserve --print-completions zsh > ~/.local/share/zsh-completion/_miniserve
 else
     echo "Unknown SHELL, Ripgrep completions will not be generated"
-    exit 1
+    exit
 fi
 echo "# ---------------------------------------"
-
-echo ""
+echo
