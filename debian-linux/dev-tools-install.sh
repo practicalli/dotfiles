@@ -5,7 +5,7 @@
 # Run as user and install tools in ~/.local/bin
 # except Neovim which is installed globally (for use as root for administration)
 
-
+# Define location to install tools (except Neovim)
 installpath="~/.local/bin/"
 
 # Ensure install path exists
@@ -20,6 +20,8 @@ export PATH=$HOME/.local/bin:$PATH
 
 echo "Install tools for software development outside of the OS package manager"
 echo "Binaries are installed in " $installpath
+echo "Ensure tools are not already running before running this script to prevent failure"
+
 
 echo "# ---------------------------------------"
 echo "Install Developer tools from latest GitHub Release Assests"
