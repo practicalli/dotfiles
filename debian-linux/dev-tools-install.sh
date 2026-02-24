@@ -27,7 +27,7 @@ echo "# ---------------------------------------"
 echo "Install Developer tools from latest GitHub Release Assests"
 echo "# ---------------------------------------"
 
-echo ""
+echo
 
 echo "# ---------------------------------------"
 echo "Installer tools"
@@ -36,10 +36,36 @@ echo "Installer tools"
 ./tui/dra.sh
 
 # Install Python as tools, manage venv and packages
-./cli/uv
+./cli/uv.sh
 echo "# ---------------------------------------"
 
-echo ""
+echo
+
+echo "# ---------------------------------------"
+echo "Desktop Apps"
+
+./app/1password.sh
+./app/discord.sh
+./app/httpie.sh
+
+echo "# ---------------------------------------"
+
+echo
+
+echo "# ---------------------------------------"
+echo "Command Line tools"
+
+./cli/bat.sh
+./cli/just.sh
+./cli/git-cli.sh
+./cli/httpie-deb.sh
+# ./cli/httpie-uv-tool.sh
+./cli/miniserve.sh
+./cli/ripgrep.sh
+
+echo "# ---------------------------------------"
+
+echo
 
 echo "# ---------------------------------------"
 echo "TUIs"
@@ -53,27 +79,24 @@ echo "TUIs"
 
 echo "# ---------------------------------------"
 
-echo "# ---------------------------------------"
-echo "Command Line tools"
-
-./cli/bat.sh
-./cli/just.sh
-./cli/git-cli.sh
-# ./cli/httpie-deb.sh
-# ./cli/httpie-uv-tool.sh
-./cli/just.sh
-./cli/miniserve.sh
-./cli/ripgrep.sh
-
-echo "# ---------------------------------------"
-
-echo ""
+echo
 
 echo "# ---------------------------------------"
 echo "Static Site Generators"
 
 ./cli/material-for-mkdocs.sh
 ./cli/zensical.sh
+
+echo "# ---------------------------------------"
+
+echo
+
+echo "# ---------------------------------------"
+echo "Programming Languages"
+
+./language/nodejs-fvm-install-nodejs.sh
+# ./language/nodejs-nvm-install-node24.sh
+./language/rust-rustup-install.sh
 
 echo "# ---------------------------------------"
 
