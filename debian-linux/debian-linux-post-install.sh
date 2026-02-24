@@ -14,23 +14,25 @@ purge="debian-linux-post-install-packages-purge.list"
 echo
 echo "# ---------------------------------------"
 echo Update available Debian packages
-apt update
+sudo apt update
 echo "# ---------------------------------------"
-
-echo ""
-echo ""
+echo
 
 # Install additional Debian packages
 while read -r line
 do
   echo "# ---------------------------------------"
   echo Install "$line"
-  apt-get --yes --ignore-missing install "$line"
+  sudo apt-get --yes --ignore-missing install "$line"
   echo "# ---------------------------------------"
 done < "$add"
+echo
 
-echo ""
-echo ""
+echo "# ---------------------------------------"
+echo Install System Clipboard tool - X11 or Wayland
+./clipboard.sh
+echo "# ---------------------------------------"
+echo
 
 # Remove additional Debian packages
 while read -r line
@@ -40,24 +42,18 @@ do
   echo Purge "$line"
   echo "# ---------------------------------------"
   echo
-  apt-get purge --yes --ignore-missing "$line"
+  sudo apt-get purge --yes --ignore-missing "$line"
 done < "$purge"
-
-echo ""
-echo ""
+echo
 
 echo "# ---------------------------------------"
 echo Uninstall unnecessary Debian packages
-apt-get autopurge
+sudo apt-get autopurge
 echo "# ---------------------------------------"
-
-echo ""
-echo ""
+echo
 
 echo "# ---------------------------------------"
 echo Remove Debian package files from cache
-apt-get clean
+sudo apt-get clean
 echo "# ---------------------------------------"
-
-echo ""
-echo ""
+echo
