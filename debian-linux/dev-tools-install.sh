@@ -6,10 +6,10 @@
 # except Neovim which is installed globally (for use as root for administration)
 
 # Define location to install tools (except Neovim)
-installpath="~/.local/bin/"
+installpath="$HOMW/.local/bin/"
 
 # Ensure install path exists
-mkdir -p ~/.local/bin
+mkdir -p "$HOME"/.local/bin
 
 # Ensure local bin is on execution path
 export PATH=$HOME/.local/bin:$PATH
@@ -19,7 +19,7 @@ export PATH=$HOME/.local/bin:$PATH
 # Install Developer tools
 
 echo "Install tools for software development outside of the OS package manager"
-echo "Binaries are installed in " $installpath
+echo "Binaries are installed in $installpath"
 echo "Ensure tools are not already running before running this script to prevent failure"
 
 
