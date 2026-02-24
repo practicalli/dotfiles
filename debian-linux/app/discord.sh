@@ -8,7 +8,6 @@ echo "# ---------------------------------------"
 echo "Install Discord via Debian Linux package system"
 echo
 
-
 echo
 echo "Download official Discord Debian Package"
 curl --location "https://discordapp.com/api/download?platform=linux&format=deb" --output /tmp/discord-latest.deb
