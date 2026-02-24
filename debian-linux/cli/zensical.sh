@@ -6,7 +6,7 @@
 
 if [ "$(whoami)" = "root" ]
 then
- echo "Run the uv tool install script with a user account. Do not run as root or via sudo"
+ echo "Run the uv tool install script with your user account. Do not run as root or via sudo"
  exit
 fi
 

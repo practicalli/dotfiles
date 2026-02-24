@@ -10,9 +10,19 @@ then
  exit
 fi
 
+echo ""
+
 echo "# ---------------------------------------"
-echo "Install Material for MkDocs as tool with supporting plugins"
-uv tool install --with mkdocs-material --with mkdocs-callouts --with mkdocs-glightbox --with mkdocs-git-revision-date-localized-plugin --with mkdocs-redirects --with mkdocs-rss-plugin --with pillow --with cairosvg mkdocs
+echo "HTTP Client - installed as Uv Tool"
+
+uv tool install --with wheel httpie --upgrade
 echo "# ---------------------------------------"
 
 echo ""
+
+
+
+# Python Pip approach
+# python -m pip install --upgrade pip wheel
+#
+# python -m pip install httpie
