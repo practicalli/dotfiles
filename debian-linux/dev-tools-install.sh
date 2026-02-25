@@ -71,11 +71,15 @@ echo "# ---------------------------------------"
 echo "TUIs"
 
 ./tui/caligula.sh
+./tui/journal-view.sh
 ./tui/lychee.sh
 ./tui/neovim-current-release.sh
 ./tui/neovim-pre-release.sh
 ./tui/nvtop.sh
 ./tui/shellcheck.sh
+./tui/superfile.sh
+./tui/xplr.sh
+./tui/zenith
 
 echo "# ---------------------------------------"
 
