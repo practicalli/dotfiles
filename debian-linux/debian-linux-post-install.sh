@@ -34,6 +34,12 @@ echo Install System Clipboard tool - X11 or Wayland
 echo "# ---------------------------------------"
 echo
 
+echo "# ---------------------------------------"
+echo Configure Kitty as default terminal
+sudo update-alternatives --set x-terminal-emulator "/usr/bin/kitty"
+echo "# ---------------------------------------"
+echo
+
 # Remove additional Debian packages
 while read -r line
 do
