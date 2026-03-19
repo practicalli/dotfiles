@@ -22,8 +22,9 @@ lightdm
 luarocks
 make
 meld
-nodejs
+nfs-common
 obs-studio
+openjdk-sdk
 opus-tools
 puddletag
 ranger
@@ -34,7 +35,6 @@ unzip
 visualvm
 vlc
 wget
-xclip
 xclip
 zip
 zsh
