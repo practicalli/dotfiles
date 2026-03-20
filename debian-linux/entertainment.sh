@@ -11,7 +11,7 @@
 # does not match system name
 echo "# ---------------------------------------"
 echo "Install YouTube download tool"
-dra download --select yt-dlp --install --output /usr/local/bin/ yt-dlp/yt-dlp
+dra download --select yt-dlp --install --output ~/.local/bin/ yt-dlp/yt-dlp
 echo "# ---------------------------------------"
 echo
 
