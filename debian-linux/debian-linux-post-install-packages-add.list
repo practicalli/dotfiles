@@ -25,6 +25,9 @@ meld
 nfs-common
 obs-studio
 openjdk-sdk
+openssh-client
+openssh-server
+openssh-sftp-server
 opus-tools
 puddletag
 ranger
