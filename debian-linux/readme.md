@@ -6,44 +6,53 @@ Once Debian Linux (latest stable distribution) has been installed, install prefe
 
 Add latest software development tools via GitHub releases.
 
+Get Hacking !!
+
+
 ## Manual Settings
 
-- bluetooth trackball
+- add bluetooth trackball
 - appearance: dark theme, preferred background image (image not showing in Sway)
 - mouse: natural scrolling
 - display: orientation for dual monitors
 - add practicalli to sudo group (restart required)
 
+
 ## Debian packages
 
-Run the `./debian-linux-post-install.sh` script for Practicalli preferences.
+Run the `./debian-linux-post-install.sh` script for the Debian Linux packages preferred by Practicalli.
 
-- Install all packages listed in `debian-linux-post-install-packages-add.list`
+- Update Debian Linux package database
+- Install all packages listed in `./debian-linux-post-install-packages-add.list`
 - Remove all packages listed in `./debian-linux-post-install-packages-purge.list`
-- Remove packages no longer required (`autoremove`)
-- Clean the Debian Linux package cache
+- Set kitty terminal as default (`update-alternatives`)
+- Remove packages no longer required (`autopurge`)
+- Clean the Debian Linux package cache (`autoremove`)
 
 > NOTE: packages already installed or purged are skipped in the script.
 
-> NOTE: `ligthdm` replaces `gdm3` login manager as part of this script.
-
-
-## Regolith
-
-> TODO: include in post install script
-
-- add signing key
-- add x11 and sway packages and preferred theme
-
+> NOTE: `lightdm` replaces `gdm3` login manager as part of this script.
 
 
 ## Software Development binaries
 
+Run the `./dev-tools-install.sh` script to install the latest versions of software development tools, programming languages, tui's and desktop apps used by Practicalli.
+
+Alternatively, run the individual scripts for the specific tools you wish to install.
 
 
-## Shell
+## TODO
 
-- Set kitty terminal as default
-- Set practicalli/dotfiles kitty as config
-- install Prezto
-- use practicalli/dotfiles zsh as config
+- Clone practicalli/dotfiles
+- Set practicalli/dotfiles/kitty as Kitty config
+- Install Prezto
+- Set `zsh` as the default shell (preferred TAB completions)
+- Use practicalli/dotfiles/zsh as zsh config
+
+
+### Regolith Desktop
+
+> TODO: include in Debian Linux post install script
+
+- add signing key
+- add x11 and sway packages and preferred theme
