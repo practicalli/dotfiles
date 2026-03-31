@@ -11,6 +11,6 @@ echo "Neovim hyper-configurable editor - installed for all users"
 sudo dra download --select nvim-linux-x86_64.appimage --install --output /usr/local/bin/nvim neovim/neovim
 
 echo
-echo "Neovim version: $(neovim --version)"
+echo "Neovim version: $(nvim --version)"
 echo "# ---------------------------------------"
 echo ""

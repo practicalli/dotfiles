@@ -8,6 +8,6 @@ echo "Shellcheck - shell script static analysis tool"
 dra download --automatic --install --output ~/.local/bin/ koalaman/shellcheck
 
 echo
-echo "Shellchekc version: $(shellcheck --version)"
+echo "Shellcheck version: $(shellcheck --version)"
 echo "# ---------------------------------------"
 echo
