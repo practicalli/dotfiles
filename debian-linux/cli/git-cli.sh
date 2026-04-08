@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# INFO: recommend HTTPie deb package install instead
-
 echo
 echo "# ---------------------------------------"
 echo "GitHub CLI - manage GitHub Repositories"
