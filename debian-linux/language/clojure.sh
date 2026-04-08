@@ -25,12 +25,11 @@ echo "Remove install script"
 rm -f /tmp/clojure-cli-install.sh
 echo
 
-
 # Move existing config to a backup file
 if [ -d "$XDG_CONFIG_HOME"/clojure ]; then
   echo "Backup Clojure CLI Config from $XDG_CONFIG_HOME/clojure"
   mv "$XDG_CONFIG_HOME"/clojure "$XDG_CONFIG_HOME"/clojure-backup-"$(date +%Y.%m.%d)"
-if [ -d "$HOME"/.clojure ]; then
+elif [ -d "$HOME"/.clojure ]; then
   echo "Install Clojure CLI Config in $HOME/.clojure"
   mv "$HOME"/.clojure "$HOME"/.clojure-backup-"$(date +%Y.%m.%d)"
 else
