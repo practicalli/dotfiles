@@ -6,6 +6,9 @@
 # NOTES:
 # - apt-get backend used as features of apt UI not required for scripts
 
+echo "# ---------------------------------------"
+echo "Debian Post install - add packages and configure Zsh"
+
 # Package lists to process
 add="debian-linux-post-install-packages-add.list"
 purge="debian-linux-post-install-packages-purge.list"
@@ -47,3 +50,9 @@ echo
 echo Remove Debian package files from cache
 sudo apt-get clean
 echo
+
+echo "Set Preferred Shell Environment"
+./cli/zsh.sh
+echo
+
+echo "# ---------------------------------------"
