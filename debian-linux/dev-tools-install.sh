@@ -14,14 +14,12 @@ mkdir -p "$HOME"/.local/bin
 # Ensure local bin is on execution path
 export PATH=$HOME/.local/bin:$PATH
 
-
 # -----------------------------------------------
 # Install Developer tools
 
 echo "Install tools for software development outside of the OS package manager"
 echo "Binaries are installed in $installpath"
 echo "Ensure tools are not already running before running this script to prevent failure"
-
 
 echo "# ---------------------------------------"
 echo "Install Developer tools from latest GitHub Release Assests"
@@ -78,6 +76,7 @@ echo "TUIs"
 ./tui/nvtop.sh
 ./tui/shellcheck.sh
 ./tui/superfile.sh
+./tui/timr-tui.sh
 ./tui/ttyper.sh
 ./tui/xplr.sh
 ./tui/zenith
@@ -108,7 +107,6 @@ echo "Programming Languages"
 echo "# ---------------------------------------"
 
 echo ""
-
 
 # Claude.ai
 #set -euo pipefail
