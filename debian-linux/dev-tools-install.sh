@@ -76,6 +76,7 @@ echo "TUIs"
 ./tui/nvtop.sh
 ./tui/shellcheck.sh
 ./tui/superfile.sh
+./tui/tabie.sh
 ./tui/timr-tui.sh
 ./tui/ttyper.sh
 ./tui/xplr.sh
