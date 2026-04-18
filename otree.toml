@@ -1,0 +1,112 @@
+# INFO: Default configuration
+# https://github.com/fioncat/otree/blob/main/config/default.toml
+
+[tree]
+disable_selected_highlight = false
+selected_symbol = ""
+
+[editor]
+program = "vim"
+args = ["{file}"]
+dir = "/tmp"
+
+[layout]
+direction = "horizontal"
+tree_size = 40
+
+[header]
+disable = false
+format = "{version} - {data_source} ({content_type}) - {data_size}"
+
+[footer]
+disable = false
+
+[data]
+disable_highlight = false
+max_data_size = 30
+
+[filter]
+disable = false
+ignore_case = false
+exclude_mode = false
+
+[keys]
+move_up = ["k", "<up>"]
+move_down = ["j", "<down>"]
+move_left = ["h", "<left>"]
+move_right = ["l", "<right>"]
+select_focus = ["<enter>"]
+select_parent = ["p"]
+select_first = ["g"]
+select_last = ["G"]
+close_parent = ["<backspace>"]
+change_root = ["r"]
+reset = ["<esc>"]
+page_up = ["<page-up>", "<ctrl-y>"]
+page_down = ["<page-down>", "<ctrl-e>"]
+change_layout = ["v"]
+tree_scale_up = ["["]
+tree_scale_down = ["]"]
+switch = ["<tab>"]
+edit = ["e"]
+copy_name = ["y"]
+copy_value = ["Y"]
+filter = ["/"]
+filter_key = ["?"]
+filter_value = ["*"]
+filter_next_match = ["n"]
+filter_prev_match = ["N"]
+filter_switch_ignore_case = ["I"]
+expand_children = ["x"]
+expand_all = ["X"]
+show_help = ["H"]
+quit = ["<ctrl-c>", "q"]
+
+[colors]
+header = {bold = true}
+focus_border = {fg = "magenta", bold = true}
+
+[colors.tree]
+border = {fg = "blue"}
+selected = {fg = "black", bg = "light-green"}
+name = {}
+filter_keyword = { fg = "black", bg = "yellow" }
+type_str = {fg = "cyan", bold = true, italic = true}
+type_null = {fg = "cyan", bold = true, italic = true}
+type_bool = {fg = "cyan", bold = true, italic = true}
+type_num = {fg = "cyan", bold = true, italic = true}
+type_arr = {fg = "cyan", bold = true, italic = true}
+type_obj = {fg = "cyan", bold = true, italic = true}
+value =  {fg = "dark-gray"}
+
+[colors.data]
+text = {}
+border = {fg = "blue"}
+symbol = {}
+name = {fg = "yellow", italic = true}
+str = {fg = "green"}
+num = {fg = "red"}
+null = {fg = "blue", italic = true}
+bool = {fg = "red", bold = true, italic = true}
+section = {fg = "cyan", bold = true}
+
+[colors.footer]
+root = {fg = "black", bg = "light-cyan", bold = true}
+identify = {fg = "black", bg = "light-green", bold = true}
+message = {fg = "green", bold = true}
+
+[colors.popup]
+error_text = {fg = "red"}
+help_name = {fg = "yellow"}
+help_value = {fg = "green", bold = true}
+
+[colors.filter]
+border = {fg = "blue"}
+
+[types]
+str = "str"
+null = "null"
+bool = "bool"
+num = "num"
+arr = "arr"
+obj = "obj"
