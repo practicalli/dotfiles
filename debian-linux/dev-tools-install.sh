@@ -7,6 +7,7 @@
 
 # Define location to install tools (except Neovim)
 installpath="$HOMW/.local/bin/"
+nodeversion="${1:-24}"
 
 # Ensure install path exists
 mkdir -p "$HOME"/.local/bin
@@ -101,7 +102,7 @@ echo "Programming Languages"
 
 ./language/clojure.sh
 ./language/clojure-lsp.sh
-./language/nodejs-fvm-install-nodejs.sh
+./language/nodejs-fvm-install-nodejs.sh $nodeversion
 # ./language/nodejs-nvm-install-node24.sh
 ./language/rust-rustup-install.sh
 

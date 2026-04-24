@@ -7,6 +7,9 @@ echo
 echo "# ---------------------------------------"
 echo "Nodejs install via Node Version Manager - FNM"
 
+# Use argument as node version or use "24" if no argument passed
+nodeversion="${1:-24}"
+
 # Download and install fnm:
 # https://github.com/Schniz/fnm
 curl -o- https://fnm.vercel.app/install | bash
@@ -16,11 +19,11 @@ curl -o- https://fnm.vercel.app/install | bash
 
 # Define location of FNM
 if [ -d "$XDG_CONFIG_HOME"/fnm ]; then
- echo "Source FNM script from XDG_DATA_HOME/fnm"
- FNM_PATH="$XDG_DATA_HOME/fnm"
+  echo "Source FNM script from XDG_DATA_HOME/fnm"
+  FNM_PATH="$XDG_DATA_HOME/fnm"
 else
- echo "Source NVM script from HOME/.local/share/fnm"
- FNM_PATH="$HOME/.local/share/fnm"
+  echo "Source NVM script from HOME/.local/share/fnm"
+  FNM_PATH="$HOME/.local/share/fnm"
 fi
 
 # Source the FNM script
@@ -31,7 +34,7 @@ if [ -d "$FNM_PATH" ]; then
 fi
 
 # Download and install Node.js:
-fnm install 24
+fnm install "$nodeversion"
 
 # Verify the Node.js version:
 echo "Node.js version: $(node -v)"
