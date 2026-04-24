@@ -40,6 +40,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - debian: 1password install via package manager
 - debian: install latest software development tool binaries
 - debian: optional version argument to nodejs install script
+- debian: separate package install and purge scripts
 
 ### Changed
 - git: restructure multiple configs, using relative include file paths
