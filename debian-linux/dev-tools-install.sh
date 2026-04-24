@@ -102,9 +102,8 @@ echo "Programming Languages"
 
 ./language/clojure.sh
 ./language/clojure-lsp.sh
-./language/nodejs-fvm-install-nodejs.sh $nodeversion
-# ./language/nodejs-nvm-install-node24.sh
-./language/rust-rustup-install.sh
+./language/nodejs-fnm-install-nodejs.sh "$nodeversion"
+# ./language/rust-rustup-install.sh
 
 echo "# ---------------------------------------"
 
