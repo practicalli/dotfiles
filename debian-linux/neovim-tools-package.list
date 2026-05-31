@@ -1,0 +1,15 @@
+curl
+default-jdk
+fd-find
+fonts-firacode
+fzf
+gdu
+git
+jq
+kitty
+luarocks
+make
+openjdk-sdk
+ripgrep
+wget
+xclip
