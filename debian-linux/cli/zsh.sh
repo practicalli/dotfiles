@@ -10,6 +10,7 @@ echo "Zsh shell and Prezto Configuration"
 sudo apt install zsh
 
 # Switch to Zsh shell
+zsh
 
 # Install Prezto config
 #
