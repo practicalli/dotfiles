@@ -2,7 +2,7 @@
 
 echo "# ---------------------------------------"
 echo "UV python package manager"
-dra download --automatic --install --output ~/.local/bin/ astral-sh/uv
+dra download --automatic --install-file uv --install-file uvx --output ~/.local/bin/ astral-sh/uv
 
 echo
 echo "Uv version: $(uv --version)"
