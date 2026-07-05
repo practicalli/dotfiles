@@ -25,7 +25,7 @@ Practicalli follows the FreeDesktop.org XDG basedir specification for configurat
 
 > NOTE: Using `$HOME/.config` simplifies versioning of configuration files compared to using the root of a user account, i.e. `$HOME`.
 
-> Learn more about [configuring the FreeDesktop.org XDG basedir standard for development tools](https://practical.li/blog/posts/adopt-FreeDesktop.org-XDG-standard-for-configuration-files/)
+> Learn more about [configuring the FreeDesktop.org XDG basedir standard for development tools](https://practical.li/blog/freedesktoporg-xdg-standard-for-clojure-development-tools/)
 
 
 ## Other tool configurations
