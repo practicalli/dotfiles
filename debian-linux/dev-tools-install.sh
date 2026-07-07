@@ -46,6 +46,7 @@ echo "Desktop Apps"
 ./app/1password.sh
 ./app/discord.sh
 ./app/httpie.sh
+./app/slack-deb.sh       # Check for latest deb
 
 echo "# ---------------------------------------"
 
