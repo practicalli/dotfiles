@@ -9,7 +9,7 @@ echo "Install Discord via Debian Linux package system"
 echo
 
 echo "Download official Discord Debian Package"
-curl --location "https://discordapp.com/api/download?platform=linux&format=deb" --output /tmp/discord-latest.deb
+curl --fail --location --silent --show-error "https://discordapp.com/api/download?platform=linux&format=deb" --output /tmp/discord-latest.deb
 echo
 
 echo "Install Discord package"
