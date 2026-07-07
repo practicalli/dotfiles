@@ -43,11 +43,13 @@ echo
 echo "# ---------------------------------------"
 echo "Desktop Apps"
 
-./app/discord.sh
 # ./app/1password-deb.sh  # Practicalli uses Proton Pass now
+./app/discord-deb.sh
+./app/firefox-deb.sh
 ./app/httpie.sh
 ./app/proton-pass-deb.sh # Check for latest deb
 ./app/slack-deb.sh       # Check for latest deb
+./app/vs-code-deb.sh
 
 echo "# ---------------------------------------"
 
