@@ -11,7 +11,7 @@ echo "Installed via Debian Linux package system"
 echo
 
 echo "Download official Slack Debian Package"
-curl "https://downloads.slack-edge.com/desktop-releases/linux/x64/4.47.69/slack-desktop-4.47.69-amd64.deb" --output /tmp/slack-latest.deb
+curl --fail --location --silent --show-error "https://downloads.slack-edge.com/desktop-releases/linux/x64/4.50.143/slack-desktop-4.50.143-amd64.deb" --output /tmp/slack-latest.deb
 echo
 
 echo "Install Slack package"
