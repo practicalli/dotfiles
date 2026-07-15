@@ -6,7 +6,7 @@
 # except Neovim which is installed globally (for use as root for administration)
 
 # Define location to install tools (except Neovim)
-installpath="$HOMW/.local/bin/"
+installpath="$HOME/.local/bin/"
 nodeversion="${1:-24}"
 
 # Ensure install path exists
