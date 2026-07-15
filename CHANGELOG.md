@@ -41,6 +41,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - debian: install latest software development tool binaries
 - debian: optional version argument to nodejs install script
 - debian: separate package install and purge scripts
+- debian: btop install script via DRA
 
 ### Changed
 - git: restructure multiple configs, using relative include file paths

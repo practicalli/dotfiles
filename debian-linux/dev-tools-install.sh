@@ -59,6 +59,7 @@ echo "# ---------------------------------------"
 echo "Command Line tools"
 
 ./cli/bat.sh
+./cli/btop.sh
 ./cli/just.sh
 ./cli/git-cli.sh
 ./cli/httpie-deb.sh
