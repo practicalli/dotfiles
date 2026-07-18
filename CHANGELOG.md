@@ -43,6 +43,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - debian: separate package install and purge scripts
 - debian: btop install script via DRA
 - make: zensical tasks via uv and tool install
+- debian: add maximum mkdocs version to install script
 
 ### Changed
 - git: restructure multiple configs, using relative include file paths
