@@ -107,6 +107,7 @@ echo "Programming Languages"
 
 ./language/clojure.sh
 ./language/clojure-lsp.sh
+./language/cljstyle.sh
 ./language/nodejs-fnm-install-nodejs.sh "$nodeversion"
 # ./language/rust-rustup-install.sh
 
