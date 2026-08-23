@@ -7,7 +7,8 @@
 # - https://support.mozilla.org/en-US/kb/install-firefox-linux#w_install-firefox-deb-package-for-debian-based-distributions-recommended
 # - https://askubuntu.com/a/1516224
 
-sudo snap remove --purge firefox
+# TODO: add check for Ubuntu and/or Snap install of firefox
+# sudo snap remove --purge firefox
 
 # 1. Create a directory to store APT repository keys if it doesn't exist
 sudo install -d -m 0755 /etc/apt/keyrings
@@ -28,10 +29,12 @@ Pin: origin packages.mozilla.org
 Pin-Priority: 1000
 ' | sudo tee /etc/apt/preferences.d/mozilla > /dev/null
 
-echo 'Unattended-Upgrade::Origins-Pattern { "archive=mozilla"; };' | sudo tee /etc/apt/apt.conf.d/51unattended-upgrades-firefox
+echo '
+Unattended-Upgrade::Origins-Pattern { "archive=mozilla"; };
+' | sudo tee /etc/apt/apt.conf.d/51unattended-upgrades-firefox
 
 # 6. Update your package list, and install the Firefox .deb package
-sudo apt-get update && sudo apt-get install -y --allow-downgrades firefox
+sudo apt-get update && sudo apt-get install -y --allow-downgrades firefox firefox-l10n-en-gb
 
 
 # -----------------------------------------------
