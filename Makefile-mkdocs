@@ -24,7 +24,7 @@ MKDOCS_SERVER := mkdocs serve --dev-addr localhost:7777
 OUTDATED_FILE := outdated-$(shell date +%y-%m-%d-%T).md
 # -------------------------------------- #
 
-# --  Quality Checks  ------------------ #
+# -- Quality Checks ------------------ #
 pre-commit-check: lint
 
 lint:  ## Run MegaLinter with custom configuration (node.js required)

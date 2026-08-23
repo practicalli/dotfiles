@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ### Added
 - fix(debian-linux): 🔧 update firefox debian package ppa script
 - ci(github): 🔧 practicalli ci workflows for zensical book
+- build(make): 🔧 practicalli tasks for zensical and clojure sites
 - git: ssh key signing
 - shell: aliases for editing shell history with fd
 - git: aliases for git clone `git clone p:repo-name`

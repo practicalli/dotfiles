@@ -52,7 +52,7 @@ dependencies-update: ## Update all library dependencies and GitHub action
 	- clojure -T:update/dependency-versions > $(OUTDATED_FILE)
 # -------------------------------------- #
 
-# --- Documentation Generation  -------- #
+# -- Documentation Generation  --------- #
 mkdocs-install:
 	uv tool install --with mkdocs-material --with mkdocs-callouts --with mkdocs-glightbox --with mkdocs-git-revision-date-localized-plugin --with mkdocs-redirects --with mkdocs-rss-plugin --with pillow --with cairosvg mkdocs
 
@@ -73,7 +73,7 @@ docs-debug:  ## Run mkdocs local server in debug mode
 	$(MKDOCS_SERVER) -v
 # -------------------------------------- #
 
-# ------- Version Control -------------- #
+# -- Version Control ------------------- #
 git-sr:  ## status list of git repos under current directory
 	$(info -- Multiple Git Repo Status --------------)
 	mgitstatus -e --flatten
@@ -83,7 +83,7 @@ git-status:  ## status details of git repos under current directory
 	mgitstatus
 # -------------------------------------- #
 
-# ------------ Help -------------------- #
+# -- Help ------------------------------ #
 # Source: https://nedbatchelder.com/blog/201804/makefile_help_target.html
 
 help:  ## Describe available tasks in Makefile
