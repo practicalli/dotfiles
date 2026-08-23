@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ## [Unreleased]
 
 ### Added
+- docs(intro): 📝 start content for practicalli dotfiles
 - fix(debian-linux): 🔧 update firefox debian package ppa script
 - ci(github): 🔧 practicalli ci workflows for zensical book
 - build(make): 🔧 practicalli tasks for zensical and clojure sites
