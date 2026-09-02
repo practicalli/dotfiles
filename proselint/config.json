@@ -1,0 +1,10 @@
+{
+  "checks": {
+    "annotations": false,
+    "lexical_illusions": false,
+    "typography.diacritical_marks": false,
+    "typography.symbols.curly_quotes": false,
+    "typography.symbols.ellipsis": false,
+    "typography.punctuation.hyperbole": false
+  }
+}
