@@ -7,6 +7,23 @@
 !README.md
 !LICENSE
 
+# Dotfiles
+!aws
+!bin
+!debian-linux
+!docker
+!git
+!github
+!hyprland
+!kitty
+!marksman
+!proselint
+!regolith
+!shell
+!ssh
+!tui
+!zsh
+
 # ------------------------
 # Include Zensical files
 !docs/
@@ -17,7 +34,7 @@
 
 # ------------------------
 # Project automation
-!Makefile
+!Makefile*
 
 # ------------------------
 # Version Control
