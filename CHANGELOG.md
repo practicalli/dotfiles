@@ -39,17 +39,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - garuda: default hyprland configuration
 - garuda: dual monitor configuration for hyprland
 - dev: `dependencies-update` & `dependencies-outdated` make tasks
-- debian: preferred packages install and purge script
-- debian: 1 day system log rotation
-- debian: 1password install via package manager
-- debian: install latest software development tool binaries
-- debian: optional version argument to nodejs install script
-- debian: separate package install and purge scripts
-- debian: btop install script via DRA
-- make: zensical tasks via uv and tool install
-- debian: add maximum mkdocs version to install script
-- debian: cljstyle install script via DRA, include in dev-tools script
+- feat(debian): 🔧 preferred packages install and purge script
+- feat(debian): 🔧 1 day system log rotation
+- feat(debian): 🔧 1password install via package manager
+- feat(debian): 🔧 install latest software development tool binaries
+- feat(debian): 🔧 optional version argument to nodejs install script
+- feat(debian): 🔧 separate package install and purge scripts
+- feat(debian): 🔧 btop install script via DRA
+- build(make): 🔧 zensical tasks via uv and tool install
+- feat(debian): 🔧 add maximum mkdocs version to install script
+- feat(debian): 🔧 cljstyle install script via DRA, include in dev-tools script
 - build(make): 🔧 add git pull rebase for main branch, update git-sr task
+- feat(debian): 🔧 create tui directory and move otree config
 
 ### Changed
 - git: restructure multiple configs, using relative include file paths
