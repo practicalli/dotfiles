@@ -5,7 +5,7 @@
 # --- Conditional Configuration
 # Uses relative file path to this configuration file
 # [include]:gitdir for file paths
-# [include]:onbranch for a particular branch 
+# [include]:onbranch for a particular branch
 # [include]:hasconfig:remote.*.url for a different remote domain, e.g. github & gitlab
 
 # Default personal identity configuration
@@ -16,9 +16,9 @@
 [includeIf "gitdir:**/practicalli/"]
 		path = config-practicalli
 
-# Commercial work 
-[includeIf "gitdir:**/griffin/"]
-		path = config-griffin
+# Commercial work
+[includeIf "gitdir:**/company/"]
+		path = config-company
 
 
 # --- Common Git Behaviour
@@ -75,7 +75,7 @@
 # 				trustExitCode = true
 
 
-# --- Git commands 
+# --- Git commands
 
 # command line shot cuts
 [alias]
@@ -106,9 +106,6 @@
 [url "git@engineering:practicalli/"]
 	insteadOf = e:
 
-[url "git@griffin:griffinbank/"]
-	insteadOf = g:
-
 [help]
 	# Automatically change incorrectly typed commands
 	# Set timeout (in 0.1 second steps) before git automatically changes the command
@@ -121,4 +118,3 @@
 	helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = !/usr/bin/gh auth git-credential
-
