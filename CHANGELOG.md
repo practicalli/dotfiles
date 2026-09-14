@@ -49,6 +49,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - make: zensical tasks via uv and tool install
 - debian: add maximum mkdocs version to install script
 - debian: cljstyle install script via DRA, include in dev-tools script
+- build(make): 🔧 add git pull rebase for main branch, update git-sr task
 
 ### Changed
 - git: restructure multiple configs, using relative include file paths
