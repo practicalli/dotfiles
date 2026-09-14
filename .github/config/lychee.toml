@@ -17,7 +17,7 @@ scheme = ["https"]
 # Website timeout from connect to response finished.
 timeout = 10
 
- File to read and write cookies
+# File to read and write cookies
 # cookie_jar = "cookie-jar"
 
 # Number of threads to utilize.
