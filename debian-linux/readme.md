@@ -1,12 +1,10 @@
-# Debian Post install
+# Debian Post Install
 
 Steps to customise the Debian Linux experience after the initial install.
 
 Once Debian Linux (latest stable distribution) has been installed, install preferred packages and remove unwanted packages.
 
 Add latest software development tools via GitHub releases.
-
-Get Hacking !!
 
 
 ## Manual Settings
@@ -18,7 +16,7 @@ Get Hacking !!
 - add practicalli to sudo group (restart required)
 
 
-## Debian packages
+## Debian Packages
 
 Run the `./debian-linux-post-install.sh` script for the Debian Linux packages preferred by Practicalli.
 
@@ -34,14 +32,14 @@ Run the `./debian-linux-post-install.sh` script for the Debian Linux packages pr
 > NOTE: `lightdm` replaces `gdm3` login manager as part of this script.
 
 
-## Software Development binaries
+## Software Development Binaries
 
 Run the `./dev-tools-install.sh` script to install the latest versions of software development tools, programming languages, tui's and desktop apps used by Practicalli.
 
 Alternatively, run the individual scripts for the specific tools you wish to install.
 
 
-## TODO
+## Additional Steps
 
 - Clone practicalli/dotfiles
 - Set practicalli/dotfiles/kitty as Kitty config
