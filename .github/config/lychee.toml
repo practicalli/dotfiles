@@ -9,7 +9,7 @@ base_url = "https://practical.li/dotfiles/"
 user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:153.0) Gecko/20100101 Firefox/153.0"
 
 # "Accept: */*"
-header = { "accept" = ["text/html", "application/json"] }
+header = { "accept" = "*/*" }
 
 # Only test links with the given schemes (e.g. http, https, file, and mailto.
 scheme = ["https"]
