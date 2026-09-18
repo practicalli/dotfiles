@@ -82,6 +82,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - kitty: nerdfonts bundled, symbol config redundant
 - zsh: prezto config format for readability
 - dev: updated GitHub action versions
+- feat(debian): ⚙️ install zensical with catppuccin theme
 
 | :file                                          | :name              | :current | :latest |
 |------------------------------------------------|------------------- |----------|---------|

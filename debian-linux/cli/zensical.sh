@@ -12,8 +12,8 @@ fi
 
 echo
 echo "# ---------------------------------------"
-echo "Install Zensical - updates if already installed"
-uv tool install zensical --upgrade
+echo "Install Zensical with Catppuccin theme - updates if already installed"
+uv tool install zensical --with catppuccin-zensical --upgrade
 echo
 echo "Zensical version: $(zensical --version)"
 echo "# ---------------------------------------"
