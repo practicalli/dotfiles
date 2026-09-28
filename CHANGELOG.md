@@ -57,6 +57,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ### Changed
 - ci(megalinter): 🔧 update to custom zensical flavor
+- ci(zensical): 🔧 zensical build from uv install
 - git: restructure multiple configs, using relative include file paths
 - dev: checkout action version 4 in backstage-validator workflow
 - dev: upload-artifact action version 4 in megalinter workflow
