@@ -1,18 +1,14 @@
 # MegaLinter GitHub Action configuration file
 # More info at https://megalinter.io
 ---
+
 name: MegaLinter
-
-# Trigger mega-linter at every push. Action will also be visible from
-# Pull Requests to main
 on:
-  # Comment this line to trigger action only on pull-requests
-  # (not recommended if you don't pay for GH Actions)
-  push:
-
+  workflow_dispatch:
   pull_request:
-    branches:
-      - main
+    branches: [main]
+  push:
+    branches: [main]
 
 # Comment env block if you do not want to apply fixes
 env:
@@ -53,6 +49,11 @@ jobs:
       pull-requests: write
 
     steps:
+
+      - run: echo "🚀 Job automatically triggered by ${{ github.event_name }}"
+      - run: echo "🐧 Job running on ${{ runner.os }} server"
+      - run: echo "🐙 Using ${{ github.ref }} branch from ${{ github.repository }} repository"
+
       # Git Checkout
       - name: Checkout Code
         uses: actions/checkout@v7
@@ -73,6 +74,8 @@ jobs:
           # If you use VALIDATE_ALL_CODEBASE = true, you can remove this line to
           # improve performance
           fetch-depth: 0
+
+      - run: echo "🐙 Sparse Checkout of ${{ github.repository }} repository to the CI runner."
 
       # MegaLinter
       - name: MegaLinter
@@ -229,3 +232,8 @@ jobs:
           commit_message: "[MegaLinter] Apply linters fixes"
           commit_user_name: megalinter-bot
           commit_user_email: 129584137+megalinter-bot@users.noreply.github.com
+
+
+      # Summary and status
+      - run: echo "🎨 MegaLinter quality checks completed"
+      - run: echo "🍏 Job status is ${{ job.status }}."
