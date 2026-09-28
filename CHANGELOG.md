@@ -52,6 +52,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - build(make): 🔧 add git pull rebase for main branch, update git-sr task
 - feat(debian): 🔧 create tui directory and move otree config
 - feat(starship): 🔧 add icon replacements for practicalli project directories
+- ci(github): 🔧 prevent jekyll process running after CI build
 
 ### Changed
 - git: restructure multiple configs, using relative include file paths
