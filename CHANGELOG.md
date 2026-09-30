@@ -54,6 +54,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - feat(starship): 🔧 add icon replacements for practicalli project directories
 - ci(github): 🔧 prevent jekyll process running after CI build
 - build(marksman): 🔧 set docs as root for all links in project
+- feat(debian): 🔨 install script for whalebird mastodon desktop client
 
 ### Changed
 - ci(megalinter): 🔧 update to custom zensical flavor
