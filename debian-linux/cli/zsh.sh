@@ -7,7 +7,7 @@ echo
 echo "Zsh shell and Prezto Configuration"
 
 # Install Zsh
-sudo apt install zsh
+sudo apt-get --yes --ignore-missing install zsh
 
 # Switch to Zsh shell
 zsh
