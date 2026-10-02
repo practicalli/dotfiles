@@ -55,6 +55,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - ci(github): 🔧 prevent jekyll process running after CI build
 - build(marksman): 🔧 set docs as root for all links in project
 - feat(debian): 🔨 install script for whalebird mastodon desktop client
+- docs(terminal): 📝 overview of kitty terminal and practicalli customisations
 
 ### Changed
 - ci(zensical): update uv to 10.2.0
