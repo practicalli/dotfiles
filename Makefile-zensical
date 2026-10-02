@@ -7,8 +7,7 @@
 # ------------------------------------------------ #
 
 # Requirements
-# - python
-# - uv
+# - python & uv (local book generation)
 # - clojure & practicalli cli config (dependency check)
 # - docker (run megalinter locally)
 # - node.js (mega-linter-runner via npx)
@@ -29,7 +28,7 @@ HELP-DESCRIPTION-SPACING := 24
 # SHELL := /usr/bin/zsh
 
 # Tool variables
-MEGALINTER_RUNNER := npx mega-linter-runner --flavor documentation --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --remove-container
+MEGALINTER_RUNNER := npx mega-linter-runner --flavor documentation --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --env "'VALIDATE_ALL_CODEBASE=true'"  --remove-container
 DOCS_SERVER := zensical serve --dev-addr localhost:7777
 OUTDATED_FILE := outdated-$(shell date +%y-%m-%d-%T).md
 # ------------------------------------------------ #
@@ -62,7 +61,7 @@ dependencies-update: ## Update all library dependencies and GitHub action
 	- clojure -T:update/dependency-versions > $(OUTDATED_FILE)
 # ------------------------------------------------ #
 
-# -- Documentation Generation  ------------------- #
+# -- Documentation Generation -------------------- #
 docs-install:  ## Install or upgrade Zensical with Catppuccin theme plugin
 	uv tool install zensical --with catppuccin-zensical --upgrade
 
