@@ -11,7 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 
-## 2023-09-28
+## 🔖 2026-10-02
 
 ### Added
 - docs(intro): 📝 start content for practicalli dotfiles
