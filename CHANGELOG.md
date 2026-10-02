@@ -11,6 +11,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 
+## 2023-09-28
+
 ### Added
 - docs(intro): 📝 start content for practicalli dotfiles
 - fix(debian-linux): 🔧 update firefox debian package ppa script
@@ -56,6 +58,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - build(marksman): 🔧 set docs as root for all links in project
 - feat(debian): 🔨 install script for whalebird mastodon desktop client
 - docs(terminal): 📝 overview of kitty terminal and practicalli customisations
+- docs(shell): ✏️ update prezto and starship info
 
 ### Changed
 - feat(debian): 🔧 update command to install zsh debian package
@@ -75,12 +78,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - zsh: prezto config format for readability
 - dev: updated GitHub action versions
 
-| :file                                          | :name            | :current | :latest |
-|------------------------------------------------|------------------|----------|---------|
-| .github/workflows/backstage-validator.yaml     | actions/checkout | v4       | v5      |
-| .github/workflows/changelog-check.yaml         | actions/checkout | v4       | v5      |
-| .github/workflows/megalinter.yaml              | actions/checkout | v4       | v5      |
-| .github/workflows/scheduled-version-check.yaml | actions/checkout | v4       | v5      |
+| :file                                          | :name              | :current | :latest |
+|------------------------------------------------|------------------- |----------|---------|
+| .github/workflows/backstage-validator.yaml     | actions/checkout   | v4       | v7      |
+| .github/workflows/changelog-check.yaml         | actions/checkout   | v4       | v7      |
+| .github/workflows/mega-linter.yml              | actions/checkout   | v4       | v7      |
+|                                                | actions/megalinter | v9       | v0.10.1 |
+| .github/workflows/scheduled-version-check.yaml | actions/checkout   | v4       | v7      |
 
 
 ## 2023-09-28
