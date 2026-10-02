@@ -58,6 +58,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - docs(terminal): 📝 overview of kitty terminal and practicalli customisations
 
 ### Changed
+- feat(terminal): 🔧 set kitty font to 20 points by default
+- feat(shell): 🔧 update neovide alias to latest practicalli/nvim-astro config
 - ci(zensical): update uv to 10.2.0
 - ci(megalinter): 🔧 update to custom zensical flavor
 - ci(zensical): 🔧 zensical build from uv install
