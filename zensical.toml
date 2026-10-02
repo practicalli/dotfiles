@@ -383,13 +383,25 @@ quote = "fontawesome/solid/quote-left"
 # ----------------------------------------------------------------------------
 [[project.extra.social]]
 icon = "fontawesome/brands/github"
-link = "https://github.com/practicalli/cycling"
+link = "https://github.com/practicalli/dotfiles"
 [[project.extra.social]]
-icon = "fontawesome/brands/strava"
-link = "https://www.strava.com/athletes/31595960"
+icon = "material/web"
+link = "https://practical.li/"
 [[project.extra.social]]
-icon = "lucide/bike"
-link = "https://ridewithgps.com/users/1730364"
+icon = "fontawesome/brands/linkedin"
+link = "https://www.linkedin.com/in/jr0cket/"
+[[project.extra.social]]
+icon = "fontawesome/brands/slack"
+link = "https://clojurians.slack.com/messages/practicalli"
+[[project.extra.social]]
+icon = "fontawesome/brands/mastodon"
+link = "https://mastodon.social/@practicalli_johnny"
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/practicalli"
+[[project.extra.social]]
+icon = "fontawesome/brands/docker"
+link = "https://hub.docker.com/u/practicalli"
 
 # ---
 # Analytics
