@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ### Added
 
 - build(zensical): 🔧 add common practicalli social links to footer
+- feat(debian): 🔧 lazygit install script using DRA
 
 
 ## 🔖 2026-10-02
