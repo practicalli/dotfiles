@@ -18,5 +18,24 @@ icon: lucide/terminal
 - `FiraCode Nerd Font` as font family
 - cursor trail to visually show jumping cursor (easier to follow)
 - tab bar style angled
-- `ctrl+shift+t` keybinding to open new tab in current path
 - disable bell and hide window decorations
+
+### Key mappings
+
+New window splits
+
+- ++ctrl+shift+t++ opens a new tab using the current path
+- ++ctrl+shift+enter++ opens horizontal split, 20% the size of original window
+
+Switch window split focus
+
+- ++ctrl+arrow-up++ move cursor to window split above
+- ++ctrl+arrow-down++ move cursor to window split down
+
+Resize window splits
+
+- ++ctrl+shift+"j"++ shorter by 3 pixels
+- ++ctrl+shift+"k"++ taller by 3 pixels
+- ++ctrl+shift+"h"++ narrower
+- ++ctrl+shift+"l"++ wider
+- ++ctrl+shift+home++ reset all splits to default size
