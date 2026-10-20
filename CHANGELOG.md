@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - feat(debian): 🔧 lazygit install script using DRA
 - feat(kitty): 🔧 add key mappings to create and navigate window splits
 - docs(kitty): ✏️ add key mappings to create and navigate window splits
+- build(zensical): 🔧 add social cards plugin
 
 
 ## 🔖 2026-10-02
