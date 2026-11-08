@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - feat(kitty): 🔧 add key mappings to create and navigate window splits
 - docs(kitty): ✏️ add key mappings to create and navigate window splits
 - build(zensical): 🔧 add social cards plugin
+- feat(zsh): 🔧 skip git aliases provided by prezto git module
 
 
 ## 🔖 2026-10-02
