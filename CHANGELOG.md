@@ -20,6 +20,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - build(zensical): 🔧 add social cards plugin
 - feat(zsh): 🔧 skip git aliases provided by prezto git module
 
+### Changed
+
+- feat(debian): ♻️ prompt to install practicalli clojure config
+
 
 ## 🔖 2026-10-02
 
